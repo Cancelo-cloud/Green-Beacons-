@@ -340,6 +340,43 @@
         .submit-button:hover {
             transform: translateY(-2px);
         }
+
+        /* Directors styles (added for Meet Our Directors section) */
+        .directors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .director-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .director-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 1rem;
+            background: #e9ecef;
+        }
+
+        .director-card h4 {
+            color: #2d6a4f;
+            margin-bottom: 0.25rem;
+        }
+
+        .director-card p {
+            color: #6c757d;
+            margin-top: 0;
+        }
         
         footer {
             background: #2c3e50;
@@ -526,6 +563,26 @@
         </div>
     </section>
 
+    <!-- Meet Our Directors (inserted) -->
+    <section id="directors" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Meet Our Directors</h2>
+            <p style="text-align:center; max-width:800px; margin:0 auto 2rem; color:#6c757d;">
+                Get to know the people leading GreenBeacons.
+            </p>
+
+            <div class="directors-grid">
+                <div class="director-card">
+                  <a href="images/samkelo/samkelo-photo.jpg" target="_blank" rel="noopener">
+                    <img src="images/samkelo/samkelo-photo.jpg" alt="Samkelo Madlala" class="director-photo">
+                  </a>
+                  <h4>Samkelo Madlala</h4>
+                  <p>Co-Director</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="section section-alt">
         <div class="container">
             <h2 class="section-title">Let's Talk Transformation</h2>
@@ -568,7 +625,7 @@
     <footer>
         <div class="container">
             <p>&copy; 2025 GreenBeacons Coaching Initiative | Powered by A2B Transformation</p>
-            <p style="margin-top: 1rem; opacity: 0.8;">Directors: Thabo Blessing Duma & Samkelo Madlala</p>
+            <p style="margin-top: 1rem; opacity: 0.8;">Directors: Thabo Blessing Duma &amp; Samkelo Madlala</p>
         </div>
     </footer>
 
