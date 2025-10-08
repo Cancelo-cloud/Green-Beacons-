@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>GreenBeacons Coaching | Occupational Intelligence & Transformation</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: Georgia, serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%);
+            position: relative;
+        }
+
+        .leaf-decoration { position: fixed; pointer-events: none; z-index: 0; opacity: 0.08; }
+
+        .leaf-1 { top: 10%; left: 5%; width: 150px; height: 150px; background: radial-gradient(circle, #52b788 0%, transparent 70%); border-radius: 50% 0 50% 50%; transform: rotate(-45deg); }
+        .leaf-2 { top: 30%; right: 8%; width: 120px; height: 120px; background: radial-gradient(circle, #2d6a4f 0%, transparent 70%); border-radius: 50% 50% 0 50%; transform: rotate(25deg); }
+        .leaf-3 { bottom: 20%; left: 10%; width: 180px; height: 180px; background: radial-gradient(circle, #52b788 0%, transparent 70%); border-radius: 50% 50% 50% 0; transform: rotate(60deg); }
+        .leaf-4 { bottom: 40%; right: 5%; width: 140px; height: 140px; background: radial-gradient(circle, #2d6a4f 0%, transparent 70%); border-radius: 0 50% 50% 50%; transform: rotate(-30deg); }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; font-weight: bold; background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: #2c3e50; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: #2d6a4f; }
+
+        .hero { padding: 6rem 0; text-align: center; color: white; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; animation: fadeInUp 1s ease; }
+        .hero p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; animation: fadeInUp 1s ease 0.2s both; }
+
+        .cta-button {
+            display: inline-block; background: white; color: #2d6a4f; padding: 1rem 2.5rem; border-radius: 50px;
+            text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+
+        .section { padding: 5rem 0; background: white; position: relative; overflow: hidden; }
+        .section::before { content: '🌿'; position: absolute; top: 20px; right: 30px; font-size: 120px; opacity: 0.05; transform: rotate(-15deg); }
+        .section::after { content: '🌱'; position: absolute; bottom: 30px; left: 40px; font-size: 100px; opacity: 0.05; transform: rotate(20deg); }
+
+        .section-alt { background: #f8f9fa; position: relative; overflow: hidden; }
+        .section-alt::before { content: '🍃'; position: absolute; top: 40px; left: 50px; font-size: 90px; opacity: 0.06; transform: rotate(-30deg); }
+        .section-alt::after { content: '🌾'; position: absolute; bottom: 50px; right: 60px; font-size: 110px; opacity: 0.05; transform: rotate(15deg); }
+
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #2c3e50; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .service-card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
+
+        .service-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .service-card h3 { color: #2d6a4f; margin-bottom: 1rem; font-size: 1.5rem; }
+        .service-card p { color: #6c757d; }
+
+        .methodology { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .method-item { background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%); color: white; padding: 2rem; border-radius: 10px; text-align: center; }
+        .method-item h4 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center; margin-top: 3rem; }
+
+        .contact-form { max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display:block; margin-bottom:0.5rem; font-weight:500; color:#2c3e50; }
+        .form-group input, .form-group textarea, .form-group select { width:100%; padding:0.8rem; border:2px solid #e9ecef; border-radius:8px; font-size:1rem; transition:border-color 0.3s; }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline:none; border-color:#2d6a4f; }
+
+        .submit-button { background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%); color:white; padding:1rem 2rem; border:none; border-radius:50px; font-size:1.1rem; font-weight:bold; cursor:pointer; width:100%; transition:transform 0.3s; }
+        .submit-button:hover { transform: translateY(-2px); }
+
+        /* Directors styles (three-column layout with center emphasized) */
+        .directors-grid { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 2rem; align-items: center; margin-top: 2rem; }
+
+        .director-card {
+            background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            text-align: center; transition: transform 0.25s ease, box-shadow 0.25s ease;
+            display:flex; flex-direction:column; align-items:center; justify-content:flex-start; min-height: 240px;
+        }
+        .director-card:hover { transform: translateY(-6px); box-shadow:0 18px 40px rgba(0,0,0,0.12); }
+
+        .director-card a { color: inherit; text-decoration: none; display:inline-block; }
+
+        .director-photo {
+            width: 140px; height: 140px; border-radius: 50%; object-fit: cover; display:block; margin: 0 auto 1rem;
+            background:#eef2f4; opacity: 1; transition: opacity 280ms ease-in-out, transform 280ms ease; transform: translateY(0);
+            border: 6px solid rgba(255,255,255,0.6);
+        }
+        .director-photo.loaded { opacity: 1; transform: translateY(0); }
+
+        .director-card.center { transform: none; }
+        .director-card.center .director-photo { width: 180px; height: 180px; }
+        .director-card.center h4 { font-size:1.25rem; }
+
+        .director-card h4 { color:#2d6a4f; margin-bottom:0.25rem; }
+        .director-card p { color:#6c757d; margin-top:0; }
+
+        footer { background: #2c3e50; color: white; padding: 3rem 0; text-align: center; position: relative; overflow: hidden; }
+        footer::before { content: '🌿'; position: absolute; top: 20px; left: 10%; font-size: 80px; opacity: 0.15; transform: rotate(45deg); }
+        footer::after { content: '🌱'; position: absolute; bottom: 20px; right: 15%; font-size: 70px; opacity: 0.12; transform: rotate(-20deg); }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Modal styles (Option 2) */
+        .gb-modal-backdrop {
+          position: fixed; inset: 0; background: rgba(20,30,20,0.45); display:none; align-items:center;
+          justify-content:center; z-index:1200; padding: 1rem;
+        }
+        .gb-modal {
+          background: white; max-width:800px; width:100%; border-radius:12px; padding:1.25rem 1.5rem;
+          box-shadow: 0 20px 60px rgba(0,0,0,0.25); max-height: 88vh; overflow:auto;
+        }
+        .gb-modal .close { float:right; background:none; border:0; font-size:1.1rem; cursor:pointer; }
+        .gb-modal h3 { color:#2d6a4f; margin-top:0; }
+        .gb-modal .modal-body { margin-top:1rem; color:#333; }
+        .gb-modal-backdrop.open { display:flex; }
+
+        @media (max-width: 900px) {
+            .directors-grid { grid-template-columns: 1fr; }
+            .director-card.center .director-photo { width:140px; height:140px; }
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+    <noscript>
+      <style>
+        .director-photo { opacity: 1 !important; transform: none !important; }
+        .director-card a { color: inherit; text-decoration: none; }
+      </style>
+    </noscript>
+</head>
+<body>
+    <div class="leaf-decoration leaf-1"></div>
+    <div class="leaf-decoration leaf-2"></div>
+    <div class="leaf-decoration leaf-3"></div>
+    <div class="leaf-decoration leaf-4"></div>
+
+    <header>
+        <nav class="container">
+            <div class="logo">🌱 GreenBeacons</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#methodology">Methodology</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#directors">Meet Directors</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Transform Learning Into Action</h1>
+            <p>A2B-Certified Occupational Intelligence Coaching for Individuals & Organizations</p>
+            <a href="#contact" class="cta-button">Start Your Transformation</a>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem; color: #6c757d;">
+                GreenBeacons bridges the gap between training and transformation. We don't just deliver content—we coach people through mindset shifts, behavioral change, and sustainable application of learning.
+            </p>
+
+            <div class="services-grid">
+                <!-- Occupational Intelligence Coaching - WIRED to open the modal -->
+                <div class="service-card"
+                     role="button" tabindex="0"
+                     data-modal-title="Occupational Intelligence Coaching"
+                     data-modal-target="#modal-occupational">
+                    <div class="service-icon">🧠</div>
+                    <h3>Occupational Intelligence Coaching</h3>
+                    <p>A2B-certified coaching on mindset frameworks, hardwires assessment, and strengths-based development.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎤</div>
+                    <h3>Public Speaking & Facilitation</h3>
+                    <p>Build confidence and clarity in communication. Master facilitation skills for leading teams, workshops, and community engagement.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>Business & Entrepreneurship Training</h3>
+                    <p>From hustle day challenges to market metrics, we coach participants through practical business fundamentals and execution.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🌟</div>
+                    <h3>Leadership Development</h3>
+                    <p>Cultivate adaptive leadership, relational intelligence, and peer coaching capabilities within your teams.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Remote-First Coaching</h3>
+                    <p>Cost-efficient, scalable coaching via WhatsApp voice notes, peer triads, and bi-weekly check-ins.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Office Space Rotation & A2B Farm Visits</h3>
+                    <p>Access WiFi, computers, and professional workspace to craft business ideas, present to program staff, and facilitate active projects. Includes transformative nature-based retreats at the A2B farm.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="methodology" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">The A2B Transformation Methodology</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.1rem; color: #6c757d;">
+                Our coaches are certified by A2B Transformation in Occupational Intelligence—a holistic approach to human potential, self-awareness, and sustainable behavior change.
+            </p>
+            <div class="methodology">
+                <div class="method-item"><h4>"I Can" Mindset</h4><p>Shifting from limitation to possibility through agency and ownership.</p></div>
+                <div class="method-item"><h4>1% Better Daily</h4><p>Micro-commitments that compound into transformational results over time.</p></div>
+                <div class="method-item"><h4>Hardwires Assessment</h4><p>Deep self-awareness through A2B's diagnostic tool (nature-based retreat included).</p></div>
+                <div class="method-item"><h4>Strengths-Based Coaching</h4><p>Leveraging innate talents to build confidence and capability.</p></div>
+                <div class="method-item"><h4>Habit Tracking</h4><p>Building healthy routines through exercise, diet tracking, 1.5 liters of water daily, and quitting harmful addictions.</p></div>
+                <div class="method-item"><h4>Individual Assessment</h4><p>Post-training evaluation of strengths, hardwires observed, areas to improve, and fit for role/company.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Our Directors (unchanged) -->
+    <section id="directors" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Meet Our Directors</h2>
+            <p style="text-align:center; max-width:800px; margin:0 auto 2rem; color:#6c757d;">
+                Get to know the people leading GreenBeacons.
+            </p>
+
+            <div class="directors-grid">
+                <div class="director-card">
+                    <a href="https://raw.githubusercontent.com/Cancelo-cloud/Green-Beacons-/main/images/samkelo/samkelo-photo.jpg" target="_blank" rel="noopener noreferrer">
+                        <img src="images/samkelo/samkelo-photo.jpg" alt="Samkelo Madlala" class="director-photo">
+                    </a>
+                    <h4>Samkelo Madlala</h4>
+                    <p>Co-Director</p>
+                </div>
+
+                <div class="director-card center">
+                    <a href="images/thabo/thabo-photo.jpg" target="_blank" rel="noopener noreferrer">
+                        <img src="images/thabo/thabo-photo.jpg" alt="Thabo Blessing Duma" class="director-photo">
+                    </a>
+                    <h4>Thabo Blessing Duma</h4>
+                    <p>Director</p>
+                </div>
+
+                <div class="director-card">
+                    <a href="images/gina/gina-photo.jpg" target="_blank" rel="noopener noreferrer">
+                        <img src="images/gina/gina-photo.jpg" alt="Sethabile Gina" class="director-photo">
+                    </a>
+                    <h4>Sethabile Gina</h4>
+                    <p>Finance & Admin Manager</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Let's Talk Transformation</h2>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group"><label for="name">Name / Organization</label><input type="text" id="name" name="name" required></div>
+                    <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
+                    <div class="form-group"><label for="service">Service Interest</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service</option>
+                            <option value="occupational">Occupational Intelligence Coaching</option>
+                            <option value="leadership">Leadership Development</option>
+                            <option value="business">Business Training</option>
+                            <option value="facilitation">Public Speaking & Facilitation</option>
+                            <option value="custom">Custom Program Design</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label for="message">Tell us about your needs</label><textarea id="message" name="message" rows="5" required></textarea></div>
+                    <button type="submit" class="submit-button">Send Inquiry</button>
+                </form>
+            </div>
+            <div style="text-align:center; margin-top:3rem;"><p style="font-size:1.1rem; color:#6c757d;">📞 Schedule a 60-90 minute scoping session to discuss your training budget and coaching needs.</p></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 GreenBeacons Coaching Initiative | Powered by A2B Transformation</p>
+            <p style="margin-top:1rem; opacity:0.8;">Directors: Thabo Blessing Duma &amp; Samkelo Madlala</p>
+        </div>
+    </footer>
+
+    <!-- Reusable Modal markup -->
+    <div id="gbModalBackdrop" class="gb-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="gb-modal" role="document" aria-labelledby="gbModalTitle">
+        <button class="close" id="gbModalClose" aria-label="Close dialog">✕</button>
+        <h3 id="gbModalTitle">Title</h3>
+        <div class="modal-body" id="gbModalBody"></div>
+      </div>
+    </div>
+
+    <!-- Hidden template(s) for modal content -->
+    <template id="modal-occupational">
+      <div>
+        <p><strong>Occupational Intelligence Coaching</strong> — practical coaching that covers mindset frameworks, behavior, and hardwires assessment.</p>
+
+        <h4>Hardwires assessment</h4>
+        <p>The Hardwires assessment looks at several behavioral / attitudinal dimensions such as:</p>
+        <ul>
+          <li>Victim score — tendency to externalise problems</li>
+          <li>Attitude score — optimism / resilience</li>
+          <li>Ego score — openness to feedback and collaboration</li>
+          <li>Agency score — initiative and ownership</li>
+          <li>Consistency — follow-through on commitments</li>
+        </ul>
+
+        <h4>How it works</h4>
+        <p>We run a nature-based diagnostic, followed by individual coaching sessions, habit tracking and a personalised growth plan.</p>
+
+        <h4>Delivery formats</h4>
+        <ul>
+          <li>Short workshops with group coaching</li>
+          <li>Individual coaching (A2B-certified)</li>
+          <li>Remote follow-up via WhatsApp voice-notes and triads</li>
+        </ul>
+      </div>
+    </template>
+
+    <script>
+        // Contact form handler
+        document.getElementById('contactForm').addEventListener('submit', function(e){
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will respond within 24-48 hours. For urgent matters, please email dumacoachme@hotmail.com directly.');
+            this.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+            anchor.addEventListener('click',function(e){
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) target.scrollIntoView({ behavior:'smooth', block:'start' });
+                }
+            });
+        });
+
+        // Director images diagnostics + graceful fallback + fade-in (keeps images visible by default)
+        (function () {
+            const imgs = document.querySelectorAll('.director-photo');
+            imgs.forEach(img => {
+                if (img.complete && img.naturalWidth > 0) {
+                    img.classList.add('loaded');
+                }
+                img.addEventListener('load', () => img.classList.add('loaded'));
+                img.addEventListener('error', () => {
+                    img.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+                        '<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220">' +
+                        '<rect width="100%" height="100%" fill="#f3f6f7"/>' +
+                        '<circle cx="50%" cy="44%" r="36%" fill="#e3eaec"/>' +
+                        '</svg>'
+                    );
+                    img.alt = '';
+                    img.classList.add('loaded');
+                });
+            });
+
+            // Optional debug: report any still-not-loaded images after 3s
+            setTimeout(() => {
+                imgs.forEach(img => {
+                    if (!img.complete || img.naturalWidth === 0) {
+                        console.warn('Director image still not loaded after timeout:', img.src);
+                    }
+                });
+            }, 3000);
+        })();
+
+        // Modal logic (reusable)
+        (function(){
+          const modalBackdrop = document.getElementById('gbModalBackdrop');
+          const modalTitle = document.getElementById('gbModalTitle');
+          const modalBody = document.getElementById('gbModalBody');
+          const modalClose = document.getElementById('gbModalClose');
+          let lastFocused = null;
+
+          function openModal(title, contentNode) {
+            lastFocused = document.activeElement;
+            modalTitle.textContent = title || '';
+            // clear body
+            modalBody.innerHTML = '';
+            if (contentNode instanceof Node) {
+              modalBody.appendChild(contentNode.cloneNode(true));
+            } else if (typeof contentNode === 'string') {
+              modalBody.innerHTML = contentNode;
+            }
+            modalBackdrop.classList.add('open');
+            modalBackdrop.setAttribute('aria-hidden','false');
+            modalClose.focus();
+            document.addEventListener('keydown', onKey);
+          }
+
+          function closeModal() {
+            modalBackdrop.classList.remove('open');
+            modalBackdrop.setAttribute('aria-hidden','true');
+            if (lastFocused) lastFocused.focus();
+            document.removeEventListener('keydown', onKey);
+          }
+
+          function onKey(e){
+            if (e.key === 'Escape') closeModal();
+          }
+
+          modalClose.addEventListener('click', closeModal);
+          modalBackdrop.addEventListener('click', (ev)=>{
+            if (ev.target === modalBackdrop) closeModal();
+          });
+
+          // Attach to triggers with data-modal-title + (data-modal-content | data-modal-target)
+          document.querySelectorAll('[data-modal-title]').forEach(trigger=>{
+            // support keyboard activation
+            trigger.addEventListener('click', function(e){
+              e.preventDefault();
+              const title = trigger.getAttribute('data-modal-title');
+              const targetSelector = trigger.getAttribute('data-modal-target');
+              const contentAttr = trigger.getAttribute('data-modal-content');
+              if (targetSelector) {
+                const tpl = document.querySelector(targetSelector);
+                if (tpl && tpl.content) {
+                  openModal(title, tpl.content);
+                } else {
+                  openModal(title, '<p>Content not found.</p>');
+                }
+              } else if (contentAttr) {
+                openModal(title, contentAttr);
+              } else {
+                openModal(title, '<p>No additional information provided.</p>');
+              }
+            });
+
+            // allow keyboard activation with Enter/Space when role=button or tabindex set
+            trigger.addEventListener('keydown', function(e){
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                trigger.click();
+              }
+            });
+          });
+        })();
+    </script>
+</body>
+</html>
