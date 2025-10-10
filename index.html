@@ -225,6 +225,7 @@
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
         }
         
         .service-card:hover {
@@ -474,35 +475,52 @@
         <div class="container">
             <h2 class="section-title">Our Services</h2>
             <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem; color: #6c757d;">
-                GreenBeacons bridges the gap between training and transformation. We don't just deliver content—we coach people through mindset shifts, behavioral change, and sustainable application of learning.
+                GreenBeacons bridges the gap between training and transformation. We don't just deliver content—we coach people through mindset shifts, behavioral change, and sustainable application[...]
             </p>
+
             <div class="services-grid">
-                <div class="service-card">
+                <!-- Occupational Intelligence -->
+                <div class="service-card" onclick="openService('occupational')">
                     <div class="service-icon">🧠</div>
                     <h3>Occupational Intelligence Coaching</h3>
                     <p>A2B-certified coaching on mindset frameworks: "I Can," "1% Better," hardwires assessments, and strengths-based development.</p>
                 </div>
-                <div class="service-card">
+
+                <!-- Public Speaking -->
+                <div class="service-card" onclick="openService('speaking')">
                     <div class="service-icon">🎤</div>
                     <h3>Public Speaking & Facilitation</h3>
                     <p>Build confidence and clarity in communication. Master facilitation skills for leading teams, workshops, and community engagement.</p>
                 </div>
+
                 <div class="service-card">
                     <div class="service-icon">💼</div>
                     <h3>Business & Entrepreneurship Training</h3>
                     <p>From hustle day challenges to market metrics, we coach participants through practical business fundamentals and execution.</p>
                 </div>
+
                 <div class="service-card">
                     <div class="service-icon">🌟</div>
                     <h3>Leadership Development</h3>
                     <p>Cultivate adaptive leadership, relational intelligence, and peer coaching capabilities within your teams.</p>
                 </div>
+
                 <div class="service-card">
                     <div class="service-icon">📱</div>
                     <h3>Remote-First Coaching</h3>
                     <p>Cost-efficient, scalable coaching via WhatsApp voice notes, peer triads, and bi-weekly check-ins.</p>
                 </div>
             </div>
+
+            <!-- Modal Container -->
+            <div id="serviceModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+                background:rgba(0,0,0,0.7); z-index:200; justify-content:center; align-items:center; padding:20px;">
+                <div id="modalContent" style="background:white; border-radius:15px; max-width:800px; width:100%; padding:2rem; overflow-y:auto; max-height:90vh; position:relative;">
+                    <button onclick="closeModal()" style="position:absolute; top:15px; right:20px; background:none; border:none; font-size:1.5rem; cursor:pointer;">✖</button>
+                    <div id="modalInner"></div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -565,7 +583,7 @@
             <div style="margin-top: 4rem; text-align: center;">
                 <h3 style="color: #2d6a4f; margin-bottom: 1rem;">Who We Serve</h3>
                 <p style="max-width: 700px; margin: 0 auto; font-size: 1.1rem; color: #6c757d;">
-                    NGOs, corporate training departments, youth employment programs, environmental initiatives, and any organization committed to transforming learning into sustainable action. Currently piloting with DUCT/SEF GL2E project—serving 1,000+ participants across South Africa.
+                    NGOs, corporate training departments, youth employment programs, environmental initiatives, and any organization committed to transforming learning into sustainable action. Current[...]
                 </p>
             </div>
         </div>
@@ -653,12 +671,70 @@
     </footer>
 
     <script>
+        // Service modal functions (added for Occupational Intelligence & Public Speaking)
+        function openService(type) {
+            const modal = document.getElementById('serviceModal');
+            const content = document.getElementById('modalInner');
+            let html = '';
+
+            if (type === 'speaking') {
+                html = `
+                    <h2>🎤 Public Speaking & Facilitation</h2>
+                    <h3 style="margin-top:1rem;">Basic Plan</h3>
+                    <ul>
+                        <li>Weekly Practice Sessions — live public speaking workshops</li>
+                        <li>Personalized Topics — aligned with individual goals</li>
+                        <li>Performance Tracking — timed presentations with clear metrics</li>
+                        <li>Expert Feedback — evaluation on fluency, articulation, and presence</li>
+                        <li>Progress Reports — written feedback after every presentation</li>
+                    </ul>
+                    <h3 style="margin-top:1.5rem;">Premium Plan</h3>
+                    <ul>
+                        <li>Includes everything in Basic</li>
+                        <li>Facilitation Mastery — learn to design and lead workshops or sessions</li>
+                        <li>Custom Materials — toolkits, templates, and facilitation frameworks</li>
+                        <li>1-on-1 Coaching — personalized guidance with a GB facilitator</li>
+                        <li>Advanced Techniques — mastering audience engagement and confidence</li>
+                    </ul>`;
+            }
+
+            if (type === 'occupational') {
+                html = `
+                    <h2>🧠 Occupational Intelligence Coaching</h2>
+                    <h3 style="margin-top:1rem;">Basic Plan</h3>
+                    <ul>
+                        <li>Daily Check-ins — 1% goals and evening reflections with a GB coach</li>
+                        <li>Weekly Hardwires Sessions — guided group discussions</li>
+                        <li>Accountability Tracking — 4-week consistency building</li>
+                        <li>Peer Community — shared growth journey and reflection</li>
+                    </ul>
+                    <h3 style="margin-top:1.5rem;">Premium Plan</h3>
+                    <ul>
+                        <li>Includes everything in Basic</li>
+                        <li>Full Hardwires Assessment — with A2B diagnostic and nature retreat</li>
+                        <li>Individual Coaching — bi-weekly 1-on-1 sessions with A2B coach</li>
+                        <li>Personalized Action Plan — based on strengths and growth areas</li>
+                        <li>Post-Training Evaluation — detailed feedback and development report</li>
+                    </ul>`;
+            }
+
+            content.innerHTML = html;
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('serviceModal').style.display = 'none';
+            document.getElementById('modalInner').innerHTML = '';
+        }
+
+        // Contact form handler (kept from original)
         document.getElementById('contactForm').addEventListener('submit', function(e){
             e.preventDefault();
             alert('Thank you for your inquiry! We will respond within 24-48 hours. For urgent matters, please email dumacoachme@hotmail.com directly.');
             this.reset();
         });
 
+        // Smooth scrolling for anchor links (kept from original)
         document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
             anchor.addEventListener('click',function(e){
                 e.preventDefault();
