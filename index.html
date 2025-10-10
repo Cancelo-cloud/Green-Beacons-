@@ -346,10 +346,9 @@
             transform: translateY(-2px);
         }
 
-        /* Directors styles (three-column layout with center emphasized) */
         .directors-grid {
             display: grid;
-            grid-template-columns: 1fr 1.2fr 1fr; /* center slightly wider */
+            grid-template-columns: 1fr 1.2fr 1fr;
             gap: 2rem;
             align-items: center;
             margin-top: 2rem;
@@ -366,7 +365,7 @@
 
         .director-card:hover {
             transform: translateY(-6px);
-            box-shadow:0 18px 40px rgba(0,0,0,0.12);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.12);
         }
 
         .director-photo {
@@ -374,18 +373,18 @@
             height: 140px;
             border-radius: 50%;
             object-fit: cover;
-            display:block;
+            display: block;
             margin: 0 auto 1rem;
-            background:#e9ecef;
+            background: #e9ecef;
         }
 
-        /* Emphasize center director */
         .director-card.center { transform: none; }
         .director-card.center .director-photo { width: 180px; height: 180px; }
-        .director-card.center h4 { font-size:1.25rem; }
+        .director-card.center h4 { font-size: 1.25rem; }
 
-        .director-card h4 { color:#2d6a4f; margin-bottom:0.25rem; }
-        .director-card p { color:#6c757d; margin-top:0; }
+        .director-card h4 { color: #2d6a4f; margin-bottom: 0.25rem; }
+        .director-card p { color: #6c757d; margin-top: 0; }
+        .director-card a { cursor: pointer; display: block; }
 
         footer {
             background: #2c3e50;
@@ -440,12 +439,11 @@
 
         @media (max-width: 900px) {
             .directors-grid { grid-template-columns: 1fr; }
-            .director-card.center .director-photo { width:140px; height:140px; }
+            .director-card.center .director-photo { width: 140px; height: 140px; }
         }
     </style>
 </head>
 <body>
-    <!-- Decorative leaf elements -->
     <div class="leaf-decoration leaf-1"></div>
     <div class="leaf-decoration leaf-2"></div>
     <div class="leaf-decoration leaf-3"></div>
@@ -573,7 +571,6 @@
         </div>
     </section>
 
-    <!-- Meet Our Directors (three-column layout: left Sam, center Thabo (bigger), right Sethabile Gina) -->
     <section id="directors" class="section section-alt">
         <div class="container">
             <h2 class="section-title">Meet Our Directors</h2>
@@ -582,7 +579,6 @@
             </p>
     
             <div class="directors-grid">
-                <!-- Left: Co-Director Sam -->
                 <div class="director-card">
                     <a href="images/samkelo/samkelo-photo.jpg" target="_blank" rel="noopener noreferrer">
                         <img src="images/samkelo/samkelo-photo.jpg" alt="Samkelo Madlala" class="director-photo">
@@ -591,7 +587,6 @@
                     <p>Co-Director</p>
                 </div>
     
-                <!-- Center: Director Thabo (slightly larger) -->
                 <div class="director-card center">
                     <a href="images/thabo/thabo-photo.jpg" target="_blank" rel="noopener noreferrer">
                         <img src="images/thabo/thabo-photo.jpg" alt="Thabo Blessing Duma" class="director-photo">
@@ -600,7 +595,6 @@
                     <p>Director</p>
                 </div>
     
-                <!-- Right: Finance & Admin Manager (Sethabile Gina) -->
                 <div class="director-card">
                     <a href="images/gina/gina-photo.jpg" target="_blank" rel="noopener noreferrer">
                         <img src="images/gina/gina-photo.jpg" alt="Sethabile Gina" class="director-photo">
