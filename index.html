@@ -676,7 +676,6 @@
             const modal = document.getElementById('serviceModal');
             const content = document.getElementById('modalInner');
             let html = '';
-
             if (type === 'speaking') {
                 html = `
                     <h2>🎤 Public Speaking & Facilitation</h2>
@@ -687,61 +686,34 @@
                         <li>Performance Tracking — timed presentations with clear metrics</li>
                         <li>Expert Feedback — evaluation on fluency, articulation, and presence</li>
                         <li>Progress Reports — written feedback after every presentation</li>
-                    </ul>
-                    <h3 style="margin-top:1.5rem;">Premium Plan</h3>
-                    <ul>
-                        <li>Includes everything in Basic</li>
                         <li>Facilitation Mastery — learn to design and lead workshops or sessions</li>
-                        <li>Custom Materials — toolkits, templates, and facilitation frameworks</li>
-                        <li>1-on-1 Coaching — personalized guidance with a GB facilitator</li>
-                        <li>Advanced Techniques — mastering audience engagement and confidence</li>
-                    </ul>`;
+                    </ul>
+                `;
             }
-
             if (type === 'occupational') {
                 html = `
                     <h2>🧠 Occupational Intelligence Coaching</h2>
-                    <h3 style="margin-top:1rem;">Basic Plan</h3>
                     <ul>
                         <li>Weekly Check-ins — 1% goals and end of week reflections with a GB coach</li>
-                        <li>Weekly Hardwires Sessions — guided group discussions</li>
-                        <li>Accountability Tracking — 4-week consistency building</li>
-                        <li>Peer Community — shared growth journey and reflection</li>
-                    </ul>
-                    <h3 style="margin-top:1.5rem;">Premium Plan</h3>
-                    <ul>
-                        <li>Includes everything in Basic</li>
                         <li>Full Hardwires Assessment — with A2B diagnostic</li>
-                        <li>Individual Coaching — monthlu 1-on-1 sessions with A2B coach</li>
-                        <li>Personalized Action Plan — based on strengths and growth areas</li>
+                        <li>Individual Coaching & Personalized Action Plan — based on strengths and growth areas</li>
                         <li>Post-Training Evaluation — detailed feedback and development report</li>
-                    </ul>`;
+                    </ul>
+                `;
             }
-
             content.innerHTML = html;
             modal.style.display = 'flex';
         }
-
         function closeModal() {
             document.getElementById('serviceModal').style.display = 'none';
             document.getElementById('modalInner').innerHTML = '';
         }
-
         // Contact form handler (kept from original)
         document.getElementById('contactForm').addEventListener('submit', function(e){
             e.preventDefault();
-            alert('Thank you for your inquiry! We will respond within 24-48 hours. For urgent matters, please email dumacoachme@hotmail.com directly.');
+            alert('Thank you for your inquiry! We will respond within 24-48 hours.');
             this.reset();
         });
-
-        // Smooth scrolling for anchor links (kept from original)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-            anchor.addEventListener('click',function(e){
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if(target) target.scrollIntoView({ behavior:'smooth', block:'start' });
-            });
-        });
-    </script>
+    </script>    
 </body>
 </html>
