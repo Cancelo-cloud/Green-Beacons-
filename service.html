@@ -88,10 +88,38 @@
             padding: 20px 30px;
             font-size: 1.5rem;
             font-weight: 600;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .section-header:hover {
+            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+        }
+        
+        .section-header::after {
+            content: '▼';
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .section-header.collapsed::after {
+            transform: rotate(-90deg);
         }
 
         .section-content {
             padding: 30px;
+            max-height: 2000px;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        
+        .section-content.collapsed {
+            max-height: 0;
+            padding: 0 30px;
         }
 
         table {
@@ -489,5 +517,22 @@
             <strong>Contact:</strong> _________
         </div>
     </div>
+    
+    <script>
+        // Toggle functionality for collapsible sections
+        document.addEventListener('DOMContentLoaded', function() {
+            const headers = document.querySelectorAll('.section-header');
+            
+            headers.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    
+                    // Toggle collapsed class
+                    this.classList.toggle('collapsed');
+                    content.classList.toggle('collapsed');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
