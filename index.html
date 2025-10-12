@@ -475,44 +475,35 @@
         <div class="container">
             <h2 class="section-title">Our Services</h2>
             <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem; color: #6c757d;">
-                GreenBeacons bridges the gap between training and transformation. We don't just deliver content—we coach people through mindset shifts, behavioral change, and sustainable application[...]
+                GreenBeacons bridges the gap between training and transformation. We deliver targeted coaching in public speaking, side-hustle development, occupational intelligence, and environmental participation—helping individuals apply what they learn and achieve measurable growth.
             </p>
 
             <div class="services-grid">
-                <!-- Occupational Intelligence -->
-                <div class="service-card" onclick="openService('occupational')">
-                    <div class="service-icon">🧠</div>
-                    <h3>Occupational Intelligence Coaching</h3>
-                    <p>A2B-certified coaching on mindset frameworks: "I Can," "1% Better," hardwires assessments, and strengths-based development.</p>
-                </div>
-
-                <!-- Public Speaking -->
                 <div class="service-card" onclick="openService('speaking')">
                     <div class="service-icon">🎤</div>
                     <h3>Public Speaking & Facilitation</h3>
-                    <p>Build confidence and clarity in communication. Master facilitation skills for leading teams, workshops, and community engagement.</p>
+                    <p>Build confidence and clarity in communication. Weekly practice sessions, personalized feedback, and facilitation mastery for Team Leaders, Business Buddies, and participants.</p>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">💼</div>
-                    <h3>Business & Entrepreneurship Training</h3>
-                    <p>From hustle day challenges to market metrics, we coach participants through practical business fundamentals and execution.</p>
+                <div class="service-card" onclick="openService('sidehustle')">
+                    <div class="service-icon">💡</div>
+                    <h3>Side-Hustle Feedback & Business Thinking</h3>
+                    <p>Individual feedback sessions to refine your business ideas plus weekly business thinking model breakdowns to strengthen your entrepreneurial mindset.</p>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">🌟</div>
-                    <h3>Leadership Development</h3>
-                    <p>Cultivate adaptive leadership, relational intelligence, and peer coaching capabilities within your teams.</p>
+                <div class="service-card" onclick="openService('occupational')">
+                    <div class="service-icon">🧠</div>
+                    <h3>Occupational Intelligence Coaching</h3>
+                    <p>A2B-certified coaching with weekly 1% prompts and monthly hardwires breakdown sessions. Reinforces mindset shifts and personal development.</p>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">📱</div>
-                    <h3>Remote-First Coaching</h3>
-                    <p>Cost-efficient, scalable coaching via WhatsApp voice notes, peer triads, and bi-weekly check-ins.</p>
+                <div class="service-card" onclick="openService('water')">
+                    <div class="service-icon">💧</div>
+                    <h3>Water Monitoring Support</h3>
+                    <p>Support and coaching to help participants engage meaningfully with environmental monitoring initiatives.</p>
                 </div>
             </div>
 
-            <!-- Modal Container -->
             <div id="serviceModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
                 background:rgba(0,0,0,0.7); z-index:200; justify-content:center; align-items:center; padding:20px;">
                 <div id="modalContent" style="background:white; border-radius:15px; max-width:800px; width:100%; padding:2rem; overflow-y:auto; max-height:90vh; position:relative;">
@@ -537,23 +528,15 @@
                 </div>
                 <div class="method-item">
                     <h4>1% Better Daily</h4>
-                    <p>Micro-commitments that compound into transformational results over time.</p>
+                    <p>Weekly prompts that compound into transformational results over time.</p>
                 </div>
                 <div class="method-item">
-                    <h4>Hardwires Assessment</h4>
-                    <p>Deep self-awareness through A2B's diagnostic tool (nature-based retreat included).</p>
+                    <h4>Hardwires Understanding</h4>
+                    <p>Deep self-awareness through monthly breakdown sessions of A2B's diagnostic framework.</p>
                 </div>
                 <div class="method-item">
-                    <h4>Strengths-Based Coaching</h4>
-                    <p>Leveraging innate talents to build confidence and capability.</p>
-                </div>
-                <div class="method-item">
-                    <h4>Habit Tracking</h4>
-                    <p>Building healthy routines through exercise, diet tracking, 1.5 liters of water daily, and quitting harmful addictions.</p>
-                </div>
-                <div class="method-item">
-                    <h4>Individual Assessment</h4>
-                    <p>Post-training evaluation of strengths, hardwires observed, areas to improve, and fit for role/company.</p>
+                    <h4>Application-Focused Coaching</h4>
+                    <p>Moving beyond theory to practical implementation and measurable behavior change.</p>
                 </div>
             </div>
         </div>
@@ -583,7 +566,7 @@
             <div style="margin-top: 4rem; text-align: center;">
                 <h3 style="color: #2d6a4f; margin-bottom: 1rem;">Who We Serve</h3>
                 <p style="max-width: 700px; margin: 0 auto; font-size: 1.1rem; color: #6c757d;">
-                    NGOs, corporate training departments, youth employment programs, environmental initiatives, and any organization committed to transforming learning into sustainable action. Current[...]
+                    We work primarily with GL2E participants, Team Leaders, Business Buddies, and youth employment programs. Our coaching strengthens communication effectiveness, entrepreneurship outcomes, and environmental participation while serving as a working model of a youth-led impact side-hustle.
                 </p>
             </div>
         </div>
@@ -641,10 +624,10 @@
                         <label for="service">Service Interest</label>
                         <select id="service" name="service">
                             <option value="">Select a service</option>
+                            <option value="speaking">Public Speaking & Facilitation</option>
+                            <option value="sidehustle">Side-Hustle Feedback & Business Thinking</option>
                             <option value="occupational">Occupational Intelligence Coaching</option>
-                            <option value="leadership">Leadership Development</option>
-                            <option value="business">Business Training</option>
-                            <option value="facilitation">Public Speaking & Facilitation</option>
+                            <option value="water">Water Monitoring Support</option>
                             <option value="custom">Custom Program Design</option>
                         </select>
                     </div>
@@ -671,44 +654,87 @@
     </footer>
 
     <script>
-        // Service modal functions (added for Occupational Intelligence & Public Speaking)
         function openService(type) {
             const modal = document.getElementById('serviceModal');
             const content = document.getElementById('modalInner');
             let html = '';
+            
             if (type === 'speaking') {
                 html = `
                     <h2>🎤 Public Speaking & Facilitation</h2>
-                    <h3 style="margin-top:1rem;">Basic Plan</h3>
-                    <ul>
-                        <li>Weekly Practice Sessions — Online public speaking workshops</li>
-                        <li>Personalized Topics — aligned with individual goals</li>
-                        <li>Performance Tracking — timed presentations with clear metrics</li>
-                        <li>Expert Feedback — evaluation on fluency, articulation, and presence</li>
-                        <li>Progress Reports — written feedback after every presentation</li>
-                        <li>Facilitation Mastery — learn to design and lead workshops or sessions</li>
+                    <p style="margin:1rem 0; color:#6c757d;"><strong>Audience:</strong> Team Leaders, Business Buddies, Learning Buddies, YES Interns</p>
+                    <h3 style="margin-top:1.5rem; color:#2d6a4f;">What's Included:</h3>
+                    <ul style="line-height:1.8;">
+                        <li><strong>2 Evening Sessions/Month</strong> — Practice-based workshops outside work hours</li>
+                        <li><strong>Timed Presentations</strong> — Performance tracking with clear metrics</li>
+                        <li><strong>Written Feedback</strong> — Evaluation on fluency, articulation, and presence</li>
+                        <li><strong>Personalized Topics</strong> — Aligned with individual goals and roles</li>
+                        <li><strong>Facilitation Mastery</strong> — Learn to design and lead workshops or sessions</li>
                     </ul>
+                    <p style="margin-top:1.5rem; padding:1rem; background:#d8f3dc; border-radius:8px;">
+                        <strong>Rate:</strong> R100/session (10+ participants) | <strong>Compulsory</strong> for leadership roles
+                    </p>
                 `;
             }
+            
+            if (type === 'sidehustle') {
+                html = `
+                    <h2>💡 Side-Hustle Feedback & Business Thinking</h2>
+                    <p style="margin:1rem 0; color:#6c757d;"><strong>Audience:</strong> All GL2E participants (opt-in)</p>
+                    <h3 style="margin-top:1.5rem; color:#2d6a4f;">What's Included:</h3>
+                    <ul style="line-height:1.8;">
+                        <li><strong>1-Hour Individual Feedback Sessions</strong> — Personalized guidance on your business idea</li>
+                        <li><strong>Weekly Business Thinking Models</strong> — Framework breakdowns to strengthen entrepreneurial mindset</li>
+                        <li><strong>Hustle Day Support</strong> — Preparation and refinement for better outcomes</li>
+                        <li><strong>Practical Application</strong> — Move from concept to actionable business plan</li>
+                    </ul>
+                    <p style="margin-top:1.5rem; padding:1rem; background:#d8f3dc; border-radius:8px;">
+                        <strong>Rate:</strong> R50/session | <strong>Impact:</strong> Refined business ideas and stronger hustle day participation
+                    </p>
+                `;
+            }
+            
             if (type === 'occupational') {
                 html = `
                     <h2>🧠 Occupational Intelligence Coaching</h2>
-                    <ul>
-                        <li>Weekly Check-ins — 1% goals and end of week reflections with a GB coach</li>
-                        <li>Full Hardwires Assessment — with A2B diagnostic</li>
-                        <li>Individual Coaching & Personalized Action Plan — based on strengths and growth areas</li>
-                        <li>Post-Training Evaluation — detailed feedback and development report</li>
+                    <p style="margin:1rem 0; color:#6c757d;"><strong>Audience:</strong> Team Leaders, Business Buddies (pilot group)</p>
+                    <h3 style="margin-top:1.5rem; color:#2d6a4f;">What's Included:</h3>
+                    <ul style="line-height:1.8;">
+                        <li><strong>Weekly WhatsApp 1% Prompts</strong> — Micro-commitments for continuous growth</li>
+                        <li><strong>Monthly Hardwires Breakdown Session</strong> — Deep dive into A2B's diagnostic framework</li>
+                        <li><strong>Mindset Reinforcement</strong> — "I Can" thinking and agency development</li>
+                        <li><strong>Course Completion Support</strong> — Coaching to improve GL2E outcomes</li>
                     </ul>
+                    <p style="margin-top:1.5rem; padding:1rem; background:#d8f3dc; border-radius:8px;">
+                        <strong>Note:</strong> Reinforces GL2E courses without duplicating Pathways administration
+                    </p>
                 `;
             }
+            
+            if (type === 'water') {
+                html = `
+                    <h2>💧 Water Monitoring Support</h2>
+                    <p style="margin:1rem 0; color:#6c757d;"><strong>Audience:</strong> GL2E participants (opt-in)</p>
+                    <h3 style="margin-top:1.5rem; color:#2d6a4f;">Program Details:</h3>
+                    <p style="line-height:1.8;">
+                        Coaching and support to help participants engage meaningfully with environmental monitoring initiatives. 
+                        Increase participation rates and strengthen environmental impact outcomes.
+                    </p>
+                    <p style="margin-top:1.5rem; padding:1rem; background:#d8f3dc; border-radius:8px;">
+                        <strong>Details:</strong> Contact us for customized support packages
+                    </p>
+                `;
+            }
+            
             content.innerHTML = html;
             modal.style.display = 'flex';
         }
+        
         function closeModal() {
             document.getElementById('serviceModal').style.display = 'none';
             document.getElementById('modalInner').innerHTML = '';
         }
-        // Contact form handler (kept from original)
+        
         document.getElementById('contactForm').addEventListener('submit', function(e){
             e.preventDefault();
             alert('Thank you for your inquiry! We will respond within 24-48 hours.');
