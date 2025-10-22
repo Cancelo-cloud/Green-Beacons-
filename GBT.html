@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GreenBeacons — Practical Skills for the Information Age</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --accent:#59c28a; --muted:#9aa6b2; --white:#f7fafc;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    body{margin:0;background:linear-gradient(180deg,#07101a 0%, #08121a 100%);color:var(--white);line-height:1.45}
+    .wrap{max-width:980px;margin:40px auto;padding:28px}
+    header{display:flex;align-items:center;gap:18px}
+    .logo{width:64px;height:64px;border-radius:10px;background:linear-gradient(135deg,#0ea77b,#046b56);display:flex;align-items:center;justify-content:center;font-weight:700;color:#042417;font-size:18px}
+    h1{font-size:28px;margin:0}
+    p.lead{color:var(--muted);margin:10px 0 22px}
+    .offer{background:linear-gradient(90deg, rgba(89,194,138,0.14), rgba(89,194,138,0.06));border-left:4px solid var(--accent);padding:14px;border-radius:8px;color:var(--white);margin-bottom:20px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    .card{background:var(--card);padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,10,0.5)}
+    .card h3{margin:0 0 8px;color:var(--accent)}
+    .muted{color:var(--muted);font-size:14px}
+    .model{display:flex;gap:12px;align-items:flex-start;margin-top:18px}
+    .pill{background:#031018;color:var(--muted);padding:6px 10px;border-radius:999px;font-size:13px}
+    footer{margin-top:30px;color:var(--muted);font-size:13px;border-top:1px dashed rgba(255,255,255,0.03);padding-top:18px;display:flex;justify-content:space-between;align-items:center}
+    .cta{background:var(--accent);color:#042417;padding:10px 14px;border-radius:8px;font-weight:700;text-decoration:none}
+    .small{font-size:13px}
+    .survey{margin-top:14px;background:#071824;padding:12px;border-radius:8px}
+    @media(max-width:880px){.grid{grid-template-columns:1fr;}.model{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="logo">GB</div>
+      <div>
+        <h1>GreenBeacons</h1>
+        <div class="muted small">Train supervisors. Build digital confidence. Grow independent earners.</div>
+      </div>
+    </header>
+
+    <section class="offer" aria-labelledby="offer">
+      <strong id="offer">An offer you can't say no to:</strong>
+      <div style="margin-top:8px" class="muted">
+        We train your team leaders to teach digital basics, deliver sharp communication, and support practical personal finance — so your program shows measurable improvement in reporting, attendance, and income-generating activity. Recordable outcomes. Practical evidence. Low overhead.
+      </div>
+    </section>
+
+    <p class="lead">
+      Three focused services — designed for organisations (NGOs, municipalities, community projects) that serve under-resourced communities. We train the trainers so scale happens without heavy travel or long classrooms.
+    </p>
+
+    <div class="grid" role="list">
+      <article class="card" role="listitem">
+        <h3>1. Digital Skills</h3>
+        <div class="muted">Microsoft basics • Keyboard rules • Gmail & professional email • Using AI for work</div>
+        <p class="small" style="margin-top:10px">Outcome: team leaders who can produce clean reports, manage attendance, and coach others to use simple digital tools.</p>
+      </article>
+
+      <article class="card" role="listitem">
+        <h3>2. Public Speaking & Communication</h3>
+        <div class="muted">Two-minute presentations • Clear instructions • Selling yourself and your work</div>
+        <p class="small" style="margin-top:10px">Outcome: confident team leaders who can run huddles, give feedback, and represent their teams to stakeholders.</p>
+      </article>
+
+      <article class="card" role="listitem">
+        <h3>3. Personal Finance & Side Hustles</h3>
+        <div class="muted">Budget basics • Micro-business fundamentals • Tracking profits & simple metrics</div>
+        <p class="small" style="margin-top:10px">Outcome: participants who can run a tiny stall, reinvest profit, and show monthly progress with evidence.</p>
+      </article>
+    </div>
+
+    <section class="model" aria-labelledby="modelTitle">
+      <div style="flex:1">
+        <h3 id="modelTitle" style="margin:0;color:var(--white)">Model — Train the Trainer</h3>
+        <div class="muted" style="margin-top:8px">
+          We train supervisors and team leaders to deliver short, repeatable, evidence-based micro-sessions (voice notes, 5–20 minute huddles, video reflections). This creates multiplier effect: one trained TL = consistent coaching for dozens.
+        </div>
+
+        <div style="margin-top:12px" class="pill">Target clients: NGOs • Municipalities • Community projects</div>
+        <div style="margin-top:8px" class="muted small">Target participants: under-resourced individuals and emerging leaders</div>
+      </div>
+
+      <aside style="width:260px">
+        <div class="card">
+          <strong>End goal</strong>
+          <div class="muted small" style="margin-top:8px">Build confidence, communication skills, and independence in the information age.</div>
+
+          <div style="margin-top:12px">
+            <strong>Delivery</strong>
+            <div class="muted small">90% online • Weekdays 16:00–17:00 • Saturday mornings</div>
+          </div>
+
+          <div style="margin-top:12px">
+            <strong>Proof & funding</strong>
+            <div class="muted small">We record sessions, capture notes & photos and submit monthly reports for fund claims.</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section style="margin-top:20px">
+      <h3 style="margin-bottom:6px">How we start</h3>
+      <div class="muted small">
+        1) Quick survey to scope needs (example below). 2) 4-week pilot with Team Leader cohort. 3) Deliverables: recorded sessions, attendance logs, 3 short participant stories of change.
+      </div>
+
+      <div class="survey">
+        <strong>Sample first-contact survey (1–5):</strong>
+        <ol class="muted small" style="margin:6px 0 0 18px">
+          <li>Gmail writing: 1 2 3 4 5 (1 = needs lots of help)</li>
+          <li>Using Excel/Sheets for basic reports: 1 2 3 4 5</li>
+          <li>Confidence speaking to a group: 1 2 3 4 5</li>
+          <li>Tracking small business sales (daily): 1 2 3 4 5</li>
+        </ol>
+      </div>
+    </section>
+
+    <section style="margin-top:18px">
+      <h3 style="margin-bottom:8px">Problem we solve</h3>
+      <div class="muted small">Too much training, too little application. Organisations run workshops; participants leave with knowledge but no practical follow-through. We turn training into daily, repeatable habits with measurable evidence.</div>
+    </section>
+
+    <div style="display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;align-items:center">
+      <a class="cta" href="mailto:hello@greenbeacons.org?subject=GreenBeacons%20Pilot%20Inquiry">Request a pilot</a>
+      <div class="muted small">Or contact: Thabo Blessing Duma • dumacoachme@hotmail.com</div>
+    </div>
+
+    <footer>
+      <div class="small">GreenBeacons — Practical coaching for real results</div>
+      <div class="small muted">If you can't attend the interview, please notify us by tomorrow at the latest.</div>
+    </footer>
+  </main>
+</body>
+</html>
