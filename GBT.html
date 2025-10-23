@@ -128,39 +128,6 @@
       font-size: 15px;
     }
     
-    .offer {
-      background: linear-gradient(135deg, rgba(82, 183, 136, 0.15), rgba(45, 106, 79, 0.08));
-      border: 1px solid rgba(82, 183, 136, 0.25);
-      border-left: 4px solid var(--primary-light);
-      padding: 28px;
-      border-radius: 14px;
-      margin-bottom: 32px;
-      box-shadow: 0 6px 24px rgba(45, 106, 79, 0.1);
-      background-color: white;
-    }
-    
-    .offer strong {
-      color: var(--primary-dark);
-      font-size: 20px;
-      display: block;
-      margin-bottom: 12px;
-    }
-    
-    .offer-text {
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-    
-    p.lead {
-      color: var(--text-dark);
-      font-size: 17px;
-      margin: 0 0 32px;
-      line-height: 1.8;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 20px 24px;
-      border-radius: 12px;
-    }
-    
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -293,59 +260,6 @@
       line-height: 1.6;
     }
     
-    .section {
-      background: rgba(255, 255, 255, 0.98);
-      padding: 32px;
-      border-radius: 16px;
-      margin: 28px 0;
-      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .section::before {
-      content: '🌿';
-      position: absolute;
-      top: -10px;
-      right: 20px;
-      font-size: 100px;
-      opacity: 0.04;
-      transform: rotate(-20deg);
-    }
-    
-    .section h3 {
-      margin: 0 0 16px;
-      color: var(--primary-dark);
-      font-size: 24px;
-      font-weight: 700;
-    }
-    
-    .section-text {
-      color: var(--text-muted);
-      font-size: 15px;
-      line-height: 1.7;
-    }
-    
-    .survey {
-      margin-top: 20px;
-      background: var(--bg-highlight);
-      padding: 24px;
-      border-radius: 12px;
-      border: 1px solid rgba(82, 183, 136, 0.3);
-    }
-    
-    .survey strong {
-      color: var(--primary-dark);
-      font-size: 16px;
-    }
-    
-    .survey ol {
-      margin: 12px 0 0 24px;
-      padding: 0;
-      color: var(--text-muted);
-      line-height: 1.8;
-    }
-    
     .cta {
       display: inline-block;
       background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
@@ -440,20 +354,39 @@
       <div class="logo">GB</div>
       <div>
         <h1>GreenBeacons</h1>
-        <div class="tagline">Train supervisors. Build digital confidence. Grow independent earners.</div>
+        <div class="tagline">Train supervisors. Build digital confidence. Boost effective communication.</div>
       </div>
     </header>
 
-    <section class="offer">
-      <strong>An offer you can't say no to:</strong>
-      <div class="offer-text">
-        We train your team leaders to teach digital basics, deliver sharp communication, and support practical personal finance — so your program shows measurable improvement in reporting, attendance, and income-generating activity. Recordable outcomes. Practical evidence. Low overhead.
-      </div>
-    </section>
+    <section class="model">
+      <div class="model-content">
+        <h3>Model — Train the Trainer</h3>
+        <div class="model-text">
+          We train supervisors and team leaders to deliver short, repeatable, evidence-based micro-sessions (voice notes, 5–20 minute huddles, video reflections). This creates multiplier effect: one trained TL = consistent coaching for dozens.
+        </div>
 
-    <p class="lead">
-      Three focused services — designed for organisations (NGOs, municipalities, community projects) that serve under-resourced communities. We train the trainers so scale happens without heavy travel or long classrooms.
-    </p>
+        <div class="pill">Target clients: NGOs • Municipalities • Community projects</div>
+        <div style="margin-top:12px;color:var(--text-muted);font-size:14px">
+          Target participants: under-resourced individuals and emerging leaders
+        </div>
+      </div>
+
+      <aside class="sidebar-card">
+        <div class="sidebar-section">
+          <strong>Problem we solve</strong>
+          <div class="sidebar-text">
+            Too much training, too little application. Organisations run workshops; participants leave with knowledge but no practical follow-through.
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <strong>Our solution</strong>
+          <div class="sidebar-text">
+            We train your team leaders to teach digital basics, deliver sharp communication, and support practical personal finance — turning training into daily, repeatable habits with measurable evidence and recordable outcomes.
+          </div>
+        </div>
+      </aside>
+    </section>
 
     <div class="grid">
       <article class="card">
@@ -483,63 +416,34 @@
 
     <section class="model">
       <div class="model-content">
-        <h3>Model — Train the Trainer</h3>
+        <h3>End goal</h3>
         <div class="model-text">
-          We train supervisors and team leaders to deliver short, repeatable, evidence-based micro-sessions (voice notes, 5–20 minute huddles, video reflections). This creates multiplier effect: one trained TL = consistent coaching for dozens.
+          Build confidence, communication skills, and independence in the information age.
         </div>
 
-        <div class="pill">Target clients: NGOs • Municipalities • Community projects</div>
-        <div style="margin-top:12px;color:var(--text-muted);font-size:14px">
-          Target participants: under-resourced individuals and emerging leaders
+        <div style="margin-top:20px">
+          <strong style="color:var(--primary-dark);font-size:17px;display:block;margin-bottom:8px">Delivery</strong>
+          <div style="color:var(--text-muted);font-size:14px">
+            90% online • Weekdays 16:00–17:00 • Saturday mornings
+          </div>
+        </div>
+
+        <div style="margin-top:20px">
+          <strong style="color:var(--primary-dark);font-size:17px;display:block;margin-bottom:8px">Proof & funding</strong>
+          <div style="color:var(--text-muted);font-size:14px">
+            We record sessions, capture notes & photos and submit monthly reports for fund claims.
+          </div>
         </div>
       </div>
 
       <aside class="sidebar-card">
         <div class="sidebar-section">
-          <strong>End goal</strong>
+          <strong>How we start</strong>
           <div class="sidebar-text">
-            Build confidence, communication skills, and independence in the information age.
-          </div>
-        </div>
-
-        <div class="sidebar-section">
-          <strong>Delivery</strong>
-          <div class="sidebar-text">
-            90% online • Weekdays 16:00–17:00 • Saturday mornings
-          </div>
-        </div>
-
-        <div class="sidebar-section">
-          <strong>Proof & funding</strong>
-          <div class="sidebar-text">
-            We record sessions, capture notes & photos and submit monthly reports for fund claims.
+            Quick survey to scope needs, 4-week pilot with Team Leader cohort, deliverables include recorded sessions, attendance logs, and 3 short participant stories of change.
           </div>
         </div>
       </aside>
-    </section>
-
-    <section class="section">
-      <h3>How we start</h3>
-      <div class="section-text">
-        1) Quick survey to scope needs (example below). 2) 4-week pilot with Team Leader cohort. 3) Deliverables: recorded sessions, attendance logs, 3 short participant stories of change.
-      </div>
-
-      <div class="survey">
-        <strong>Sample first-contact survey (1–5):</strong>
-        <ol>
-          <li>Gmail writing: 1 2 3 4 5 (1 = needs lots of help)</li>
-          <li>Using Excel/Sheets for basic reports: 1 2 3 4 5</li>
-          <li>Confidence speaking to a group: 1 2 3 4 5</li>
-          <li>Tracking small business sales (daily): 1 2 3 4 5</li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="section">
-      <h3>Problem we solve</h3>
-      <div class="section-text">
-        Too much training, too little application. Organisations run workshops; participants leave with knowledge but no practical follow-through. We turn training into daily, repeatable habits with measurable evidence.
-      </div>
     </section>
 
     <div class="cta-section">
