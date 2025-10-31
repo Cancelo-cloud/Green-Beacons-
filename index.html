@@ -5,452 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>GreenBeacons Coaching | Occupational Intelligence & Transformation</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: Georgia, serif;
-            line-height: 1.6;
-            color: #2c3e50;
-            background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%);
-            position: relative;
-        }
-        
-        .leaf-decoration {
-            position: fixed;
-            pointer-events: none;
-            z-index: 0;
-            opacity: 0.08;
-        }
-        
-        .leaf-1 {
-            top: 10%;
-            left: 5%;
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, #52b788 0%, transparent 70%);
-            border-radius: 50% 0 50% 50%;
-            transform: rotate(-45deg);
-        }
-        
-        .leaf-2 {
-            top: 30%;
-            right: 8%;
-            width: 120px;
-            height: 120px;
-            background: radial-gradient(circle, #2d6a4f 0%, transparent 70%);
-            border-radius: 50% 50% 0 50%;
-            transform: rotate(25deg);
-        }
-        
-        .leaf-3 {
-            bottom: 20%;
-            left: 10%;
-            width: 180px;
-            height: 180px;
-            background: radial-gradient(circle, #52b788 0%, transparent 70%);
-            border-radius: 50% 50% 50% 0;
-            transform: rotate(60deg);
-        }
-        
-        .leaf-4 {
-            bottom: 40%;
-            right: 5%;
-            width: 140px;
-            height: 140px;
-            background: radial-gradient(circle, #2d6a4f 0%, transparent 70%);
-            border-radius: 0 50% 50% 50%;
-            transform: rotate(-30deg);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.8rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .logo-img {
-            width: 70px;
-            height: 70px;
-            object-fit: contain;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            color: #2c3e50;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: #2d6a4f;
-        }
-        
-        .hero {
-            padding: 6rem 0;
-            text-align: center;
-            color: white;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
-        }
-        
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            animation: fadeInUp 1s ease 0.2s both;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #2d6a4f;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-            animation: fadeInUp 1s ease 0.4s both;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-        
-        .section {
-            padding: 5rem 0;
-            background: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .section::before {
-            content: '🌿';
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 120px;
-            opacity: 0.05;
-            transform: rotate(-15deg);
-        }
-        
-        .section::after {
-            content: '🌱';
-            position: absolute;
-            bottom: 30px;
-            left: 40px;
-            font-size: 100px;
-            opacity: 0.05;
-            transform: rotate(20deg);
-        }
-        
-        .section-alt {
-            background: #f8f9fa;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .section-alt::before {
-            content: '🍃';
-            position: absolute;
-            top: 40px;
-            left: 50px;
-            font-size: 90px;
-            opacity: 0.06;
-            transform: rotate(-30deg);
-        }
-        
-        .section-alt::after {
-            content: '🌾';
-            position: absolute;
-            bottom: 50px;
-            right: 60px;
-            font-size: 110px;
-            opacity: 0.05;
-            transform: rotate(15deg);
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #2c3e50;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .service-card {
-            background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-        
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .service-card h3 {
-            color: white;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-        
-        .service-card p {
-            color: rgba(255, 255, 255, 0.95);
-        }
-        
-        .methodology {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .method-item {
-            background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-        }
-        
-        .method-item h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            text-align: center;
-            margin-top: 3rem;
-        }
-        
-        .stat-item {
-            padding: 2rem;
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #2d6a4f;
-            display: block;
-        }
-        
-        .stat-label {
-            color: #6c757d;
-            font-size: 1.1rem;
-        }
-        
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: #2c3e50;
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #2d6a4f;
-        }
-        
-        .submit-button {
-            background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            transition: transform 0.3s;
-        }
-        
-        .submit-button:hover {
-            transform: translateY(-2px);
-        }
+        /* GLOBAL STYLES */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Georgia, serif; line-height: 1.6; color: #2c3e50; background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%); position: relative; }
+        a { text-decoration: none; }
 
-        .directors-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr 1fr;
-            gap: 2rem;
-            align-items: center;
-            margin-top: 2rem;
-        }
+        /* LEAF DECORATION */
+        .leaf-decoration { position: fixed; pointer-events: none; z-index: 0; opacity: 0.08; }
+        .leaf-1 { top: 10%; left: 5%; width: 150px; height: 150px; background: radial-gradient(circle, #52b788 0%, transparent 70%); border-radius: 50% 0 50% 50%; transform: rotate(-45deg); }
+        .leaf-2 { top: 30%; right: 8%; width: 120px; height: 120px; background: radial-gradient(circle, #2d6a4f 0%, transparent 70%); border-radius: 50% 50% 0 50%; transform: rotate(25deg); }
+        .leaf-3 { bottom: 20%; left: 10%; width: 180px; height: 180px; background: radial-gradient(circle, #52b788 0%, transparent 70%); border-radius: 50% 50% 50% 0; transform: rotate(60deg); }
+        .leaf-4 { bottom: 40%; right: 5%; width: 140px; height: 140px; background: radial-gradient(circle, #2d6a4f 0%, transparent 70%); border-radius: 0 50% 50% 50%; transform: rotate(-30deg); }
 
-        .director-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
+        /* CONTAINER */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        .director-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 18px 40px rgba(0,0,0,0.12);
-        }
+        /* HEADER */
+        header { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.8rem; font-weight: bold; background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .logo-img { width: 70px; height: 70px; object-fit: contain; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: #2c3e50; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: #2d6a4f; }
 
-        .director-photo {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-            margin: 0 auto 1rem;
-            background: #e9ecef;
-        }
+        /* HERO */
+        .hero { padding: 6rem 0; text-align: center; color: white; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; animation: fadeInUp 1s ease; }
+        .hero p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; animation: fadeInUp 1s ease 0.2s both; }
+        .cta-button { display: inline-block; background: white; color: #2d6a4f; padding: 1rem 2.5rem; border-radius: 50px; font-weight: bold; font-size: 1.1rem; transition: transform 0.3s, box-shadow 0.3s; animation: fadeInUp 1s ease 0.4s both; }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
 
-        .director-card.center { transform: none; }
+        /* SECTIONS */
+        .section { padding: 5rem 0; background: white; position: relative; overflow: hidden; }
+        .section-alt { background: #f8f9fa; position: relative; overflow: hidden; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #2c3e50; }
+
+        /* PILL */
+        .pill { display: inline-block; background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%); color: white; padding: 0.5rem 1rem; border-radius: 50px; font-weight: 500; margin-top: 12px; }
+
+        /* MODEL / TRAIN THE TRAINER */
+        .model { display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 4rem; }
+        .sidebar-card { flex: 1; min-width: 280px; background: #f8f9fa; padding: 2rem; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .sidebar-section { margin-bottom: 1.5rem; }
+        .sidebar-section strong { display: block; margin-bottom: 0.5rem; font-size: 1.1rem; color: #2d6a4f; }
+        .sidebar-text { font-size: 0.95rem; color: #2c3e50; line-height: 1.6; }
+
+        .model-content { flex: 2; min-width: 280px; }
+        .model-content h3 { font-size: 2rem; color: #2d6a4f; margin-bottom: 1rem; }
+        .model-text { font-size: 1rem; line-height: 1.6; color: #2c3e50; margin-bottom: 12px; }
+        .model-subtext { font-size: 0.9rem; color: #6c757d; margin-bottom: 12px; }
+
+        /* SERVICES GRID */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 4rem; }
+        .card { background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%); color: white; padding: 2rem; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .card:hover { transform: translateY(-6px); }
+        .card h3 { margin-bottom: 0.5rem; }
+        .card-desc { font-size: 0.95rem; margin-bottom: 0.5rem; }
+        .card-outcome { font-size: 0.9rem; opacity: 0.95; }
+
+        /* STATS */
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 2rem; text-align: center; margin-top: 2rem; }
+        .stat-number { font-size: 2.5rem; font-weight: bold; color: #2d6a4f; display: block; }
+        .stat-label { color: #6c757d; font-size: 1rem; }
+
+        /* DIRECTORS */
+        .directors-grid { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 2rem; align-items: center; margin-top: 2rem; }
+        .director-card { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); text-align: center; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+        .director-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.12); }
+        .director-photo { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 1rem; background: #e9ecef; }
         .director-card.center .director-photo { width: 180px; height: 180px; }
-        .director-card.center h4 { font-size: 1.25rem; }
-
         .director-card h4 { color: #2d6a4f; margin-bottom: 0.25rem; }
-        .director-card p { color: #6c757d; margin-top: 0; }
-        .director-card a { cursor: pointer; display: block; }
+        .director-card p { color: #6c757d; }
 
-        footer {
-            background: #2c3e50;
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        footer::before {
-            content: '🌿';
-            position: absolute;
-            top: 20px;
-            left: 10%;
-            font-size: 80px;
-            opacity: 0.15;
-            transform: rotate(45deg);
-        }
-        
-        footer::after {
-            content: '🌱';
-            position: absolute;
-            bottom: 20px;
-            right: 15%;
-            font-size: 70px;
-            opacity: 0.12;
-            transform: rotate(-20deg);
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .nav-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
+        /* CTA SECTION */
+        .cta-section { text-align: center; margin: 4rem 0; }
+        .cta-section .cta { display: inline-block; background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%); color: white; padding: 1rem 2rem; border-radius: 50px; font-weight: bold; transition: transform 0.3s; }
+        .cta-section .cta:hover { transform: translateY(-2px); }
+        .contact-info { margin-top: 0.5rem; font-size: 0.9rem; color: #6c757d; }
 
-        @media (max-width: 900px) {
-            .directors-grid { grid-template-columns: 1fr; }
-            .director-card.center .director-photo { width: 140px; height: 140px; }
-        }
+        /* FOOTER */
+        footer { background: #2c3e50; color: white; padding: 3rem 0; text-align: center; position: relative; overflow: hidden; font-size: 0.9rem; }
+
+        /* ANIMATION */
+        @keyframes fadeInUp { from {opacity:0; transform: translateY(30px);} to {opacity:1; transform: translateY(0);} }
+
+        /* MEDIA QUERIES */
+        @media (max-width: 900px) { .directors-grid { grid-template-columns: 1fr; } .director-card.center .director-photo { width: 140px; height: 140px; } }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .nav-links { flex-direction: column; gap: 1rem; } .model { flex-direction: column; } }
     </style>
 </head>
 <body>
@@ -458,7 +100,8 @@
     <div class="leaf-decoration leaf-2"></div>
     <div class="leaf-decoration leaf-3"></div>
     <div class="leaf-decoration leaf-4"></div>
-    
+
+    <!-- HEADER -->
     <header>
         <nav class="container">
             <div class="logo">
@@ -468,183 +111,131 @@
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#methodology">Methodology</a></li>
-                <li><a href="#impact">Impact</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#growth">Impact</a></li>
                 <li><a href="#directors">Meet Directors</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Transform Learning Into Action</h1>
-            <p>A2B-Certified Occupational Intelligence Coaching for Individuals & Organizations</p>
-            <a href="#contact" class="cta-button">Start Your Transformation</a>
-        </div>
-    </section>
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container">
+                <h1>Transform Learning Into Action</h1>
+                <p>A2B-Certified Occupational Intelligence Coaching for Individuals & Organizations</p>
+                <a href="#contact" class="cta-button">Start Your Transformation</a>
+            </div>
+        </section>
 
-    <section class="model">
-      <aside class="sidebar-card">
-        <div class="sidebar-section">
-          <strong>THE PROBLEM</strong>
-          <div class="sidebar-text">
-            Too much training, too little application. Organisations run workshops; participants leave with knowledge but no practical follow-through.
-          </div>
-        </div>
-
-        <div class="sidebar-section">
-          <strong>OUR SOLUTION</strong>
-          <div class="sidebar-text">
-            We bridge the gap between training and application. Through weekly practice sessions with just-right challenges — presenting to real audiences, writing professional emails, running budget reviews — team leaders apply their skills in real scenarios. We coach, evaluate, and document progress.
-          </div>
-        </div>
-      </aside>
-
-      <div class="model-content">
-        <h3>Model — Train the Trainer</h3>
-        <div class="model-text">
-          We train team leaders on digital skills, concise communication, and personal finance basics to ensure their reports (Gmail or monthly submissions) are professional, their facilitation is inspiring and efficient, and their financial habits set the example.
-        </div>
-
-        <div class="pill">Target clients: NGOs • Municipalities • Community projects</div>
-        <div style="margin-top:12px;color:var(--text-muted);font-size:14px">
-          Target participants: under-resourced individuals and emerging leaders
-        </div>
-        
-        <div style="margin-top:24px;padding-top:24px;border-top:2px solid rgba(82, 183, 136, 0.2);">
-          <strong style="color:var(--primary-dark);font-size:17px;display:block;margin-bottom:8px">OUR MENTORS</strong>
-          <div style="color:var(--text-muted);font-size:14px;line-height:1.6">
-              A2B Transformation certified change-agents trained in Occupational Intelligence — a proven methodology that builds skills through practice and inner volition, not passive theory.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="grid">
-      <article class="card">
-        <h3>1. Digital Skills</h3>
-        <div class="card-desc">Microsoft basics • Keyboard rules • Gmail & professional email • Using AI for work</div>
-        <div class="card-outcome">
-          <strong>Outcome:</strong> team leaders who can produce clean reports, manage attendance, and coach others to use simple digital tools.
-        </div>
-      </article>
-
-      <article class="card">
-        <h3>2. Public Speaking & Communication</h3>
-        <div class="card-desc">Two-minute presentations • Clear instructions • Selling yourself and your work</div>
-        <div class="card-outcome">
-          <strong>Outcome:</strong> confident team leaders who can run huddles, give feedback, and represent their teams to stakeholders.
-        </div>
-      </article>
-
-      <article class="card">
-        <h3>3. Personal Finance & Side Hustles</h3>
-        <div class="card-desc">Budget basics • Micro-business fundamentals • Tracking profits & simple metrics</div>
-        <div class="card-outcome">
-          <strong>Outcome:</strong> team leaders who lead by example in reinvesting profits, managing finances, and maintaining good habits around money.
-        </div>
-      </article>
-    </div>
-
-    
-
-    <section id="growth" class="section">
-        <div class="container">
-            <h2 class="section-title">Growth in Action</h2>
-            <div class="stats">
-                <div class="stat-item">
-                    <span class="stat-number">0*</span>
-                    <span class="stat-label">Public Speaking Sessions Held</span>
+        <!-- MODEL: TRAIN THE TRAINER -->
+        <section class="container model">
+            <aside class="sidebar-card">
+                <div class="sidebar-section">
+                    <strong>THE PROBLEM</strong>
+                    <div class="sidebar-text">
+                        Too much training, too little application. Organisations run workshops; participants leave with knowledge but no practical follow-through.
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number">0*</span>
-                    <span class="stat-label">Individuals Reached</span>
+                <div class="sidebar-section">
+                    <strong>OUR SOLUTION</strong>
+                    <div class="sidebar-text">
+                        We bridge the gap between training and application. Through weekly practice sessions with just-right challenges — presenting to real audiences, writing professional emails, running budget reviews — team leaders apply their skills in real scenarios. We coach, evaluate, and document progress.
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number">0*</span>
-                    <span class="stat-label">Small Businesses supported and reviewed</span>
+            </aside>
+
+            <div class="model-content">
+                <h3>Model — Train the Trainer</h3>
+                <div class="model-text">
+                    We train team leaders on digital skills, concise communication, and personal finance basics to ensure their reports are professional, their facilitation inspiring, and financial habits exemplary.
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number">0*</span>
-                    <span class="stat-label">New members enrolled for water monitoring</span>
+                <div class="pill">Target clients: NGOs • Municipalities • Community projects</div>
+                <div class="model-subtext">Target participants: under-resourced individuals and emerging leaders</div>
+
+                <div style="margin-top:24px; padding-top:24px; border-top:2px solid rgba(82,183,136,0.2);">
+                    <strong style="color:#2d6a4f; display:block; margin-bottom:8px;">OUR MENTORS</strong>
+                    <div style="color:#6c757d; font-size:0.9rem; line-height:1.6;">
+                        A2B Transformation certified change-agents trained in Occupational Intelligence — a proven methodology that builds skills through practice and inner volition.
+                    </div>
                 </div>
             </div>
-            <div style="margin-top: 4rem; text-align: center;">
-                <h3 style="color: #2d6a4f; margin-bottom: 1rem;">Who We Serve</h3>
-                <p style="max-width: 700px; margin: 0 auto; font-size: 1.1rem; color: #6c757d;">
-                    We work primarily with GL2E participants, Team Leaders, Business Buddies, and youth employment programs. Our coaching strengthens communication effectiveness, entrepreneurship outcomes, and environmental participation while serving as a working model of a youth-led impact side-hustle.
+        </section>
+
+        <!-- SERVICES GRID -->
+        <div class="container grid" id="services">
+            <article class="card">
+                <h3>Digital Skills</h3>
+                <div class="card-desc">Microsoft basics • Keyboard rules • Gmail & professional email • Using AI for work</div>
+                <div class="card-outcome"><strong>Outcome:</strong> team leaders who can produce clean reports, manage attendance, and coach others on digital tools.</div>
+            </article>
+
+            <article class="card">
+                <h3>Public Speaking & Communication</h3>
+                <div class="card-desc">Two-minute presentations • Clear instructions • Selling yourself and your work</div>
+                <div class="card-outcome"><strong>Outcome:</strong> confident team leaders who can run huddles, give feedback, and represent their teams.</div>
+            </article>
+
+            <article class="card">
+                <h3>Personal Finance & Side Hustles</h3>
+                <div class="card-desc">Budget basics • Micro-business fundamentals • Tracking profits & metrics</div>
+                <div class="card-outcome"><strong>Outcome:</strong> team leaders who lead by example in reinvesting profits, managing finances, and sustaining good habits.</div>
+            </article>
+        </div>
+
+        <!-- GROWTH / IMPACT -->
+        <section id="growth" class="section">
+            <div class="container">
+                <h2 class="section-title">Growth in Action</h2>
+                <div class="stats">
+                    <div class="stat-item"><span class="stat-number">0*</span><span class="stat-label">Public Speaking Sessions Held</span></div>
+                    <div class="stat-item"><span class="stat-number">0*</span><span class="stat-label">Individuals Reached</span></div>
+                    <div class="stat-item"><span class="stat-number">0*</span><span class="stat-label">Small Businesses Supported</span></div>
+                    <div class="stat-item"><span class="stat-number">0*</span><span class="stat-label">New Members Enrolled</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DIRECTORS -->
+        <section id="directors" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Meet Our Directors</h2>
+                <p style="text-align:center; max-width:800px; margin:0 auto 2rem; color:#6c757d;">
+                    Get to know the people leading GreenBeacons.
                 </p>
-            </div>
-        </div>
-    </section>
-
-    <div class="model-content">
-        <h3>End goal</h3>
-        <div class="model-text">
-          Reduce skills gap in digital tools, deliver engaging & efficient communication, and increase independence in the information age — so your program shows stronger reporting quality, better team coordination, and participants who can sustain income beyond the program cycle.
-        </div>
-
-        <div style="margin-top:20px">
-          <strong style="color:var(--primary-dark);font-size:17px;display:block;margin-bottom:8px">Delivery 90% online</strong>
-          <div style="color:var(--text-muted);font-size:14px">
-            • Weekdays 16:00–17:00<br>
-            • Saturday mornings 09:00-10:00
-          </div>
-        </div>
-
-        <div style="margin-top:20px">
-          <strong style="color:var(--primary-dark);font-size:17px;display:block;margin-bottom:8px">Proof & funding</strong>
-          <div style="color:var(--text-muted);font-size:14px">
-            We record sessions, attendance, capture notes & photos and submit reports for fund claims.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="directors" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">Meet Our Directors</h2>
-            <p style="text-align:center; max-width:800px; margin:0 auto 2rem; color:#6c757d;">
-                Get to know the people leading GreenBeacons.
-            </p>
-    
-            <div class="directors-grid">
-                <div class="director-card">
-                    <a href="images/samkelo/samkelo-photo.jpg" target="_blank" rel="noopener noreferrer">
-                        <img src="images/samkelo/samkelo-photo.jpg" alt="Samkelo Madlala" class="director-photo">
-                    </a>
-                    <h4>Samkelo Madlala</h4>
-                    <p>Co-Director</p>
-                </div>
-    
-                <div class="director-card center">
-                    <a href="images/thabo/thabo-photo.jpg" target="_blank" rel="noopener noreferrer">
-                        <img src="images/thabo/thabo-photo.jpg" alt="Thabo Blessing Duma" class="director-photo">
-                    </a>
-                    <h4>Thabo Blessing Duma</h4>
-                    <p>Director</p>
-                </div>
-    
-                <div class="director-card">
-                    <a href="images/gina/gina-photo.jpg" target="_blank" rel="noopener noreferrer">
-                        <img src="images/gina/gina-photo.jpg" alt="Sethabile Gina" class="director-photo">
-                    </a>
-                    <h4>Sethabile Gina</h4>
-                    <p>Finance & Admin Manager</p>
+                <div class="directors-grid">
+                    <div class="director-card">
+                        <a href="images/samkelo/samkelo-photo.jpg" target="_blank">
+                            <img src="images/samkelo/samkelo-photo.jpg" alt="Samkelo Madlala" class="director-photo">
+                        </a>
+                        <h4>Samkelo Madlala</h4>
+                        <p>Co-Director</p>
+                    </div>
+                    <div class="director-card center">
+                        <a href="images/thabo/thabo-photo.jpg" target="_blank">
+                            <img src="images/thabo/thabo-photo.jpg" alt="Thabo Blessing Duma" class="director-photo">
+                        </a>
+                        <h4>Thabo Blessing Duma</h4>
+                        <p>Director</p>
+                    </div>
+                    <div class="director-card">
+                        <a href="images/gina/gina-photo.jpg" target="_blank">
+                            <img src="images/gina/gina-photo.jpg" alt="Sethabile Gina" class="director-photo">
+                        </a>
+                        <h4>Sethabile Gina</h4>
+                        <p>Finance & Admin Manager</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <div class="cta-section">
-      <a class="cta" href="mailto:greenbeacons.2025@gmail.com?subject=GreenBeacons%20Pilot%20Inquiry">Request a pilot</a>
-      <div class="contact-info">Or contact: GreenBeacons • greenbeacons.2025@gmail.com</div>
-    </div>
+        <!-- CTA / CONTACT -->
+        <section id="contact" class="cta-section">
+            <a class="cta" href="mailto:greenbeacons.2025@gmail.com?subject=GreenBeacons%20Pilot%20Inquiry">Request a pilot</a>
+            <div class="contact-info">Or contact: GreenBeacons • greenbeacons.2025@gmail.com</div>
+        </section>
+    </main>
 
+    <!-- FOOTER -->
     <footer>
-      <div>GreenBeacons — Practical coaching for real results</div>
-      <div>© 2025 GreenBeacons. Empowering Youth, Illuminating Communities.</div>
-    </footer>
-  </main>
-</body>
-</html>
+        <
