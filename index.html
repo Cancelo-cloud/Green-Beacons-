@@ -54,7 +54,6 @@
         .model-content { flex: 2; min-width: 280px; }
         .model-content h3 { font-size: 2rem; color: #2d6a4f; margin-bottom: 1rem; }
         .model-text { font-size: 1rem; line-height: 1.6; color: #2c3e50; margin-bottom: 12px; }
-        .model-subtext { font-size: 0.9rem; color: #6c757d; margin-bottom: 12px; }
 
         /* SERVICES GRID */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 4rem; }
@@ -80,8 +79,8 @@
 
         /* CTA SECTION */
         .cta-section { text-align: center; margin: 4rem 0; }
-        .cta-section .cta { display: inline-block; background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%); color: white; padding: 1rem 2rem; border-radius: 50px; font-weight: bold; transition: transform 0.3s; }
-        .cta-section .cta:hover { transform: translateY(-2px); }
+        .cta-section .cta { display: inline-block; background: white; color: #2d6a4f; padding: 1rem 2rem; border-radius: 50px; font-weight: bold; transition: transform 0.3s, box-shadow 0.3s; }
+        .cta-section .cta:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
         .contact-info { margin-top: 0.5rem; font-size: 0.9rem; color: #6c757d; }
 
         /* FOOTER */
@@ -129,59 +128,67 @@
         </section>
 
         <!-- MODEL: TRAIN THE TRAINER -->
-        <section class="container model">
-            <aside class="sidebar-card">
-                <div class="sidebar-section">
-                    <strong>THE PROBLEM</strong>
-                    <div class="sidebar-text">
-                        Too much training, too little application. Organisations run workshops; participants leave with knowledge but no practical follow-through.
+        <section id="methodology" class="section">
+            <div class="container model">
+                <aside class="sidebar-card">
+                    <div class="sidebar-section">
+                        <strong>THE PROBLEM</strong>
+                        <div class="sidebar-text">
+                            Too much training, too little application. Organisations run workshops; participants leave with knowledge but no practical follow-through.
+                        </div>
                     </div>
-                </div>
-                <div class="sidebar-section">
-                    <strong>OUR SOLUTION</strong>
-                    <div class="sidebar-text">
-                        We bridge the gap between training and application. Through weekly practice sessions with just-right challenges — presenting to real audiences, writing professional emails, running budget reviews — team leaders apply their skills in real scenarios. We coach, evaluate, and document progress.
+                    <div class="sidebar-section">
+                        <strong>OUR SOLUTION</strong>
+                        <div class="sidebar-text">
+                            We bridge the gap between training and application. Through weekly practice sessions with just-right challenges — presenting to real audiences, writing professional emails, running budget reviews — team leaders apply their skills in real scenarios. We coach, evaluate, and document progress.
+                        </div>
                     </div>
-                </div>
-            </aside>
+                </aside>
 
-            <div class="model-content">
-                <h3>Model — Train the Trainer</h3>
-                <div class="model-text">
-                    We train team leaders on digital skills, concise communication, and personal finance basics to ensure their reports are professional, their facilitation inspiring, and financial habits exemplary.
-                </div>
-                <div class="pill">Target clients: NGOs • Municipalities • Community projects</div>
-                <div class="model-subtext">Target participants: under-resourced individuals and emerging leaders</div>
+                <div class="model-content">
+                    <h3>Model — Train the Trainer</h3>
+                    <div class="model-text">
+                        We train team leaders on digital skills, concise communication, and personal finance basics to ensure their reports (Gmail or monthly submissions) are professional, their facilitation is inspiring and efficient, and their financial habits set the example.
+                    </div>
+                    <div class="pill">Target clients: NGOs • Municipalities • Community projects</div>
+                    <div style="margin-top:12px;color:#6c757d;font-size:14px">
+                        Target participants: under-resourced individuals and emerging leaders
+                    </div>
 
-                <div style="margin-top:24px; padding-top:24px; border-top:2px solid rgba(82,183,136,0.2);">
-                    <strong style="color:#2d6a4f; display:block; margin-bottom:8px;">OUR MENTORS</strong>
-                    <div style="color:#6c757d; font-size:0.9rem; line-height:1.6;">
-                        A2B Transformation certified change-agents trained in Occupational Intelligence — a proven methodology that builds skills through practice and inner volition.
+                    <div style="margin-top:24px;padding-top:24px;border-top:2px solid rgba(82, 183, 136, 0.2);">
+                        <strong style="color:#2d6a4f;font-size:17px;display:block;margin-bottom:8px">OUR MENTORS</strong>
+                        <div style="color:#6c757d;font-size:14px;line-height:1.6">
+                            A2B Transformation certified change-agents trained in Occupational Intelligence — a proven methodology that builds skills through practice and inner volition, not passive theory.
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- SERVICES GRID -->
-        <div class="container grid" id="services">
-            <article class="card">
-                <h3>Digital Skills</h3>
-                <div class="card-desc">Microsoft basics • Keyboard rules • Gmail & professional email • Using AI for work</div>
-                <div class="card-outcome"><strong>Outcome:</strong> team leaders who can produce clean reports, manage attendance, and coach others on digital tools.</div>
-            </article>
+        <section id="services" class="section section-alt">
+            <div class="container">
+                <div class="grid">
+                    <article class="card">
+                        <h3>Digital Skills</h3>
+                        <div class="card-desc">Microsoft basics • Keyboard rules • Gmail & professional email • Using AI for work</div>
+                        <div class="card-outcome"><strong>Outcome:</strong> team leaders who can produce clean reports, manage attendance, and coach others on digital tools.</div>
+                    </article>
 
-            <article class="card">
-                <h3>Public Speaking & Communication</h3>
-                <div class="card-desc">Two-minute presentations • Clear instructions • Selling yourself and your work</div>
-                <div class="card-outcome"><strong>Outcome:</strong> confident team leaders who can run huddles, give feedback, and represent their teams.</div>
-            </article>
+                    <article class="card">
+                        <h3>Public Speaking & Communication</h3>
+                        <div class="card-desc">Two-minute presentations • Clear instructions • Selling yourself and your work</div>
+                        <div class="card-outcome"><strong>Outcome:</strong> confident team leaders who can run huddles, give feedback, and represent their teams.</div>
+                    </article>
 
-            <article class="card">
-                <h3>Personal Finance & Side Hustles</h3>
-                <div class="card-desc">Budget basics • Micro-business fundamentals • Tracking profits & metrics</div>
-                <div class="card-outcome"><strong>Outcome:</strong> team leaders who lead by example in reinvesting profits, managing finances, and sustaining good habits.</div>
-            </article>
-        </div>
+                    <article class="card">
+                        <h3>Personal Finance & Side Hustles</h3>
+                        <div class="card-desc">Budget basics • Micro-business fundamentals • Tracking profits & metrics</div>
+                        <div class="card-outcome"><strong>Outcome:</strong> team leaders who lead by example in reinvesting profits, managing finances, and sustaining good habits.</div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
         <!-- GROWTH / IMPACT -->
         <section id="growth" class="section">
@@ -196,8 +203,32 @@
             </div>
         </section>
 
+        <!-- END GOAL -->
+        <section class="section section-alt">
+            <div class="container" style="max-width: 900px;">
+                <h2 class="section-title">End Goal</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #2c3e50; margin-bottom: 2rem; text-align: center;">
+                    Reduce skills gap in digital tools, deliver engaging & efficient communication, and increase independence in the information age — so your program shows stronger reporting quality, better team coordination, and participants who can sustain income beyond the program cycle.
+                </p>
+                
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); margin-bottom: 1.5rem;">
+                    <h3 style="color: #2d6a4f; margin-bottom: 1rem; font-size: 1.4rem;">Delivery 90% online</h3>
+                    <p style="color: #6c757d; font-size: 1rem;">
+                        • Weekdays 16:00–17:00 • Saturday mornings 09:00-10:00
+                    </p>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.08);">
+                    <h3 style="color: #2d6a4f; margin-bottom: 1rem; font-size: 1.4rem;">Proof & funding</h3>
+                    <p style="color: #6c757d; font-size: 1rem; line-height: 1.6;">
+                        We record sessions, attendance, capture notes & photos and submit reports for fund claims.
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <!-- DIRECTORS -->
-        <section id="directors" class="section section-alt">
+        <section id="directors" class="section">
             <div class="container">
                 <h2 class="section-title">Meet Our Directors</h2>
                 <p style="text-align:center; max-width:800px; margin:0 auto 2rem; color:#6c757d;">
@@ -238,4 +269,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <
+        <p>&copy; 2025 GreenBeacons Coaching. All rights reserved.</p>
+    </footer>
+</body>
+</html>
