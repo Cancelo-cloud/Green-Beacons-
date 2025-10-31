@@ -483,76 +483,70 @@
         </div>
     </section>
 
-    <section id="services" class="section">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; font-size: 1.1rem; color: #6c757d;">
-                GreenBeacons bridges the gap between training and transformation. We deliver targeted coaching in public speaking, side-hustle development, occupational intelligence, and environmental participation—helping individuals apply what they learn and achieve measurable growth.
-            </p>
-
-            <div class="services-grid">
-                <div class="service-card" onclick="openService('speaking')">
-                    <div class="service-icon">🎤</div>
-                    <h3>Public Speaking & Facilitation</h3>
-                    <p>Build confidence and clarity in communication. Weekly practice sessions, personalized feedback, and facilitation mastery for Team Leaders, Business Buddies, and participants.</p>
-                </div>
-
-                <div class="service-card" onclick="openService('sidehustle')">
-                    <div class="service-icon">💡</div>
-                    <h3>Side-Hustle Feedback & Business Thinking</h3>
-                    <p>Individual feedback sessions to refine your business ideas plus weekly business thinking model breakdowns to strengthen your entrepreneurial mindset.</p>
-                </div>
-
-                <div class="service-card" onclick="openService('occupational')">
-                    <div class="service-icon">🧠</div>
-                    <h3>Occupational Intelligence Coaching</h3>
-                    <p>A2B-certified coaching with weekly 1% prompts and monthly hardwires breakdown sessions. Reinforces mindset shifts and personal development.</p>
-                </div>
-
-                <div class="service-card" onclick="openService('water')">
-                    <div class="service-icon">💧</div>
-                    <h3>Water Monitoring Support</h3>
-                    <p>Support and coaching to help participants engage meaningfully with environmental monitoring initiatives.</p>
-                </div>
-            </div>
-
-            <div id="serviceModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
-                background:rgba(0,0,0,0.7); z-index:200; justify-content:center; align-items:center; padding:20px;">
-                <div id="modalContent" style="background:white; border-radius:15px; max-width:800px; width:100%; padding:2rem; overflow-y:auto; max-height:90vh; position:relative;">
-                    <button onclick="closeModal()" style="position:absolute; top:15px; right:20px; background:none; border:none; font-size:1.5rem; cursor:pointer;">✖</button>
-                    <div id="modalInner"></div>
-                </div>
-            </div>
-
+    <section class="model">
+      <aside class="sidebar-card">
+        <div class="sidebar-section">
+          <strong>THE PROBLEM</strong>
+          <div class="sidebar-text">
+            Too much training, too little application. Organisations run workshops; participants leave with knowledge but no practical follow-through.
+          </div>
         </div>
+
+        <div class="sidebar-section">
+          <strong>OUR SOLUTION</strong>
+          <div class="sidebar-text">
+            We bridge the gap between training and application. Through weekly practice sessions with just-right challenges — presenting to real audiences, writing professional emails, running budget reviews — team leaders apply their skills in real scenarios. We coach, evaluate, and document progress.
+          </div>
+        </div>
+      </aside>
+
+      <div class="model-content">
+        <h3>Model — Train the Trainer</h3>
+        <div class="model-text">
+          We train team leaders on digital skills, concise communication, and personal finance basics to ensure their reports (Gmail or monthly submissions) are professional, their facilitation is inspiring and efficient, and their financial habits set the example.
+        </div>
+
+        <div class="pill">Target clients: NGOs • Municipalities • Community projects</div>
+        <div style="margin-top:12px;color:var(--text-muted);font-size:14px">
+          Target participants: under-resourced individuals and emerging leaders
+        </div>
+        
+        <div style="margin-top:24px;padding-top:24px;border-top:2px solid rgba(82, 183, 136, 0.2);">
+          <strong style="color:var(--primary-dark);font-size:17px;display:block;margin-bottom:8px">OUR MENTORS</strong>
+          <div style="color:var(--text-muted);font-size:14px;line-height:1.6">
+              A2B Transformation certified change-agents trained in Occupational Intelligence — a proven methodology that builds skills through practice and inner volition, not passive theory.
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="methodology" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">The A2B Transformation Methodology</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.1rem; color: #6c757d;">
-                Our coaches are certified by A2B Transformation in Occupational Intelligence—a holistic approach to human potential, self-awareness, and sustainable behavior change.
-            </p>
-            <div class="methodology">
-                <div class="method-item">
-                    <h4>"I Can" Mindset</h4>
-                    <p>Shifting from limitation to possibility through agency and ownership.</p>
-                </div>
-                <div class="method-item">
-                    <h4>1% Better Daily</h4>
-                    <p>Weekly prompts that compound into transformational results over time.</p>
-                </div>
-                <div class="method-item">
-                    <h4>Hardwires Understanding</h4>
-                    <p>Deep self-awareness through monthly breakdown sessions of A2B's diagnostic framework.</p>
-                </div>
-                <div class="method-item">
-                    <h4>Application-Focused Coaching</h4>
-                    <p>Moving beyond theory to practical implementation and measurable behavior change.</p>
-                </div>
-            </div>
+    <div class="grid">
+      <article class="card">
+        <h3>1. Digital Skills</h3>
+        <div class="card-desc">Microsoft basics • Keyboard rules • Gmail & professional email • Using AI for work</div>
+        <div class="card-outcome">
+          <strong>Outcome:</strong> team leaders who can produce clean reports, manage attendance, and coach others to use simple digital tools.
         </div>
-    </section>
+      </article>
+
+      <article class="card">
+        <h3>2. Public Speaking & Communication</h3>
+        <div class="card-desc">Two-minute presentations • Clear instructions • Selling yourself and your work</div>
+        <div class="card-outcome">
+          <strong>Outcome:</strong> confident team leaders who can run huddles, give feedback, and represent their teams to stakeholders.
+        </div>
+      </article>
+
+      <article class="card">
+        <h3>3. Personal Finance & Side Hustles</h3>
+        <div class="card-desc">Budget basics • Micro-business fundamentals • Tracking profits & simple metrics</div>
+        <div class="card-outcome">
+          <strong>Outcome:</strong> team leaders who lead by example in reinvesting profits, managing finances, and maintaining good habits around money.
+        </div>
+      </article>
+    </div>
+
+    
 
     <section id="growth" class="section">
         <div class="container">
@@ -582,6 +576,29 @@
                 </p>
             </div>
         </div>
+    </section>
+
+    <div class="model-content">
+        <h3>End goal</h3>
+        <div class="model-text">
+          Reduce skills gap in digital tools, deliver engaging & efficient communication, and increase independence in the information age — so your program shows stronger reporting quality, better team coordination, and participants who can sustain income beyond the program cycle.
+        </div>
+
+        <div style="margin-top:20px">
+          <strong style="color:var(--primary-dark);font-size:17px;display:block;margin-bottom:8px">Delivery 90% online</strong>
+          <div style="color:var(--text-muted);font-size:14px">
+            • Weekdays 16:00–17:00<br>
+            • Saturday mornings 09:00-10:00
+          </div>
+        </div>
+
+        <div style="margin-top:20px">
+          <strong style="color:var(--primary-dark);font-size:17px;display:block;margin-bottom:8px">Proof & funding</strong>
+          <div style="color:var(--text-muted);font-size:14px">
+            We record sessions, attendance, capture notes & photos and submit reports for fund claims.
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="directors" class="section section-alt">
@@ -619,139 +636,15 @@
         </div>
     </section>
 
-    <section id="contact" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">Let's Talk Transformation</h2>
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Name / Organization</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="service">Service Interest</label>
-                        <select id="service" name="service">
-                            <option value="">Select a service</option>
-                            <option value="speaking">Public Speaking & Facilitation</option>
-                            <option value="sidehustle">Side-Hustle Feedback & Business Thinking</option>
-                            <option value="occupational">Occupational Intelligence Coaching</option>
-                            <option value="water">Water Monitoring Support</option>
-                            <option value="custom">Custom Program Design</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Tell us about your needs</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">Send Inquiry</button>
-                </form>
-            </div>
-            <div style="text-align:center; margin-top:3rem;">
-                <p style="font-size:1.1rem; color:#6c757d;">
-                    📞 Schedule a 60-90 minute scoping session to discuss your training budget and coaching needs.
-                </p>
-            </div>
-        </div>
-    </section>
+    <div class="cta-section">
+      <a class="cta" href="mailto:greenbeacons.2025@gmail.com?subject=GreenBeacons%20Pilot%20Inquiry">Request a pilot</a>
+      <div class="contact-info">Or contact: GreenBeacons • greenbeacons.2025@gmail.com</div>
+    </div>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2025 GreenBeacons Coaching Initiative | Powered by A2B Transformation</p>
-            <p style="margin-top:1rem; opacity:0.8;">Directors: Thabo Blessing Duma &amp; Samkelo Madlala</p>
-        </div>
+      <div>GreenBeacons — Practical coaching for real results</div>
+      <div>© 2025 GreenBeacons. Empowering Youth, Illuminating Communities.</div>
     </footer>
-
-    <script>
-        function openService(type) {
-            const modal = document.getElementById('serviceModal');
-            const content = document.getElementById('modalInner');
-            let html = '';
-            
-            if (type === 'speaking') {
-                html = `
-                    <h2>🎤 Public Speaking & Facilitation</h2>
-                    <p style="margin:1rem 0; color:#6c757d;"><strong>Audience:</strong> Team Leaders, Business Buddies, Learning Buddies, YES Interns</p>
-                    <h3 style="margin-top:1.5rem; color:#2d6a4f;">What's Included:</h3>
-                    <ul style="line-height:1.8;">
-                        <li><strong>2 Evening Sessions/Month</strong> — Practice-based workshops outside work hours</li>
-                        <li><strong>Timed Presentations</strong> — Performance tracking with clear metrics</li>
-                        <li><strong>Written Feedback</strong> — Evaluation on fluency, articulation, and presence</li>
-                        <li><strong>Personalized Topics</strong> — Aligned with individual goals and roles</li>
-                        <li><strong>Facilitation Mastery</strong> — Learn to design and lead workshops or sessions</li>
-                    </ul>
-                    <p style="margin-top:1.5rem; padding:1rem; background:#d8f3dc; border-radius:8px;">
-                        <strong>Rate:</strong> R100/session (10+ participants) | <strong>Compulsory</strong> for leadership roles
-                    </p>
-                `;
-            }
-            
-            if (type === 'sidehustle') {
-                html = `
-                    <h2>💡 Side-Hustle Feedback & Business Thinking</h2>
-                    <p style="margin:1rem 0; color:#6c757d;"><strong>Audience:</strong> All GL2E participants (opt-in)</p>
-                    <h3 style="margin-top:1.5rem; color:#2d6a4f;">What's Included:</h3>
-                    <ul style="line-height:1.8;">
-                        <li><strong>1-Hour Individual Feedback Sessions</strong> — Personalized guidance on your business idea</li>
-                        <li><strong>Weekly Business Thinking Models</strong> — Framework breakdowns to strengthen entrepreneurial mindset</li>
-                        <li><strong>Hustle Day Support</strong> — Preparation and refinement for better outcomes</li>
-                        <li><strong>Practical Application</strong> — Move from concept to actionable business plan</li>
-                    </ul>
-                    <p style="margin-top:1.5rem; padding:1rem; background:#d8f3dc; border-radius:8px;">
-                        <strong>Rate:</strong> R50/session | <strong>Impact:</strong> Refined business ideas and stronger hustle day participation
-                    </p>
-                `;
-            }
-            
-            if (type === 'occupational') {
-                html = `
-                    <h2>🧠 Occupational Intelligence Coaching</h2>
-                    <p style="margin:1rem 0; color:#6c757d;"><strong>Audience:</strong> Team Leaders, Business Buddies (pilot group)</p>
-                    <h3 style="margin-top:1.5rem; color:#2d6a4f;">What's Included:</h3>
-                    <ul style="line-height:1.8;">
-                        <li><strong>Weekly WhatsApp 1% Prompts</strong> — Micro-commitments for continuous growth</li>
-                        <li><strong>Monthly Hardwires Breakdown Session</strong> — Deep dive into A2B's diagnostic framework</li>
-                        <li><strong>Mindset Reinforcement</strong> — "I Can" thinking and agency development</li>
-                        <li><strong>Course Completion Support</strong> — Coaching to improve GL2E outcomes</li>
-                    </ul>
-                    <p style="margin-top:1.5rem; padding:1rem; background:#d8f3dc; border-radius:8px;">
-                        <strong>Note:</strong> Reinforces GL2E courses without duplicating Pathways administration
-                    </p>
-                `;
-            }
-            
-            if (type === 'water') {
-                html = `
-                    <h2>💧 Water Monitoring Support</h2>
-                    <p style="margin:1rem 0; color:#6c757d;"><strong>Audience:</strong> GL2E participants (opt-in)</p>
-                    <h3 style="margin-top:1.5rem; color:#2d6a4f;">Program Details:</h3>
-                    <p style="line-height:1.8;">
-                        Coaching and support to help participants engage meaningfully with environmental monitoring initiatives. 
-                        Increase participation rates and strengthen environmental impact outcomes.
-                    </p>
-                    <p style="margin-top:1.5rem; padding:1rem; background:#d8f3dc; border-radius:8px;">
-                        <strong>Details:</strong> Contact us for customized support packages
-                    </p>
-                `;
-            }
-            
-            content.innerHTML = html;
-            modal.style.display = 'flex';
-        }
-        
-        function closeModal() {
-            document.getElementById('serviceModal').style.display = 'none';
-            document.getElementById('modalInner').innerHTML = '';
-        }
-        
-        document.getElementById('contactForm').addEventListener('submit', function(e){
-            e.preventDefault();
-            alert('Thank you for your inquiry! We will respond within 24-48 hours.');
-            this.reset();
-        });
-    </script>    
+  </main>
 </body>
 </html>
