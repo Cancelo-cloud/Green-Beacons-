@@ -745,10 +745,14 @@
                 <div style="background:white; padding:2rem; border-radius:16px; max-width:500px; text-align:center; margin:auto; box-shadow:0 6px 32px rgba(0,0,0,0.15); position:relative;">
                     <button onclick="closeContactModal(); return false;" style="position:absolute; top:1rem; right:1rem; background:none; border:none; color:#6c757d; font-size:2rem; cursor:pointer;">&times;</button>
                     <h3 style="margin-bottom:1.5rem; color:var(--primary-dark);">Choose your preferred method</h3>
-                    <a href="mailto:greenbeacons.2025@gmail.com?subject=GreenBeacons%20Pilot%20Inquiry" class="cta" style="display:block; margin-bottom:1rem;">Open Email App</a>
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=greenbeacons.2025@gmail.com&su=GreenBeacons%20Pilot%20Inquiry" target="_blank" class="cta" style="display:block; margin-bottom:1rem; background:linear-gradient(135deg, #EA4335, #FBBC05);">Gmail (Web)</a>
-                    <a href="https://outlook.live.com/mail/0/deeplink/compose?to=greenbeacons.2025@gmail.com&subject=GreenBeacons%20Pilot%20Inquiry" target="_blank" class="cta" style="display:block; margin-bottom:1rem; background:linear-gradient(135deg, #0078D4, #50E6FF);">Outlook (Web)</a>
+                    
                     <button onclick="copyEmail(); return false;" class="cta" style="display:block; width:100%; margin-bottom:1rem; border:none; cursor:pointer; background:linear-gradient(135deg, #6c757d, #495057);">Copy Email Address</button>
+                    
+                    <a href="mailto:greenbeacons.2025@gmail.com?subject=GreenBeacons%20Pilot%20Inquiry" class="cta" style="display:block; margin-bottom:1rem;">Open Email App</a>
+                    
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=greenbeacons.2025@gmail.com&su=GreenBeacons%20Pilot%20Inquiry" target="_blank" class="cta" style="display:block; margin-bottom:1rem; background:linear-gradient(135deg, #EA4335, #FBBC05);">Gmail (Web)</a>
+                    
+                    <a href="https://outlook.live.com/mail/0/deeplink/compose?to=greenbeacons.2025@gmail.com&subject=GreenBeacons%20Pilot%20Inquiry" target="_blank" class="cta" style="display:block; margin-bottom:1rem; background:linear-gradient(135deg, #0078D4, #50E6FF);">Outlook (Web)</a>
                 </div>
             </div>
         </section>
@@ -768,6 +772,7 @@
             if (e.target === this) closeContactModal();
         });
         </script>
+        
         <!-- FOOTER -->
         <footer>
             <div>GreenBeacons — Practical coaching for real results</div>
