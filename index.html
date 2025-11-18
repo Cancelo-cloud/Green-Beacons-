@@ -741,8 +741,9 @@
         <!-- CTA / CONTACT -->
         <section id="contact" class="cta-section">
             <a class="cta" href="#" onclick="showContactOptions(); return false;">Request a pilot</a>
-            <div id="contactModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:center;">
-                <div style="background:white; padding:2rem; border-radius:16px; max-width:500px; text-align:center;">
+            <div id="contactModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); z-index:9999; align-items:center; justify-content:center;">
+                <div style="background:white; padding:2rem; border-radius:16px; max-width:500px; text-align:center; margin:auto; box-shadow:0 6px 32px rgba(0,0,0,0.15); position:relative;">
+                    <button onclick="closeContactModal(); return false;" style="position:absolute; top:1rem; right:1rem; background:none; border:none; color:#6c757d; font-size:2rem; cursor:pointer;">&times;</button>
                     <h3 style="margin-bottom:1.5rem; color:var(--primary-dark);">Choose your preferred method</h3>
                     
                     <a href="mailto:greenbeacons.2025@gmail.com?subject=GreenBeacons%20Pilot%20Inquiry" class="cta" style="display:block; margin-bottom:1rem;">Open Email App</a>
@@ -752,11 +753,26 @@
                     <a href="https://outlook.live.com/mail/0/deeplink/compose?to=greenbeacons.2025@gmail.com&subject=GreenBeacons%20Pilot%20Inquiry" target="_blank" class="cta" style="display:block; margin-bottom:1rem; background:linear-gradient(135deg, #0078D4, #50E6FF);">Outlook (Web)</a>
                     
                     <button onclick="copyEmail(); return false;" class="cta" style="display:block; width:100%; margin-bottom:1rem; border:none; cursor:pointer; background:linear-gradient(135deg, #6c757d, #495057);">Copy Email Address</button>
-                    
-                    <button onclick="closeContactModal(); return false;" style="background:none; border:none; color:var(--text-muted); cursor:pointer; margin-top:1rem;">Cancel</button>
                 </div>
             </div>
         </section>
+        <script>
+        function showContactOptions() {
+            document.getElementById('contactModal').style.display = 'flex';
+        }
+        function closeContactModal() {
+            document.getElementById('contactModal').style.display = 'none';
+        }
+        function copyEmail() {
+            navigator.clipboard.writeText('greenbeacons.2025@gmail.com').then(function() {
+                alert('Email copied: greenbeacons.2025@gmail.com');
+            });
+        }
+        // Optional: close modal when clicking the dark background
+        document.getElementById('contactModal').addEventListener('click', function(e) {
+            if (e.target === this) closeContactModal();
+        });
+        </script>
 
         <!-- FOOTER -->
         <footer>
