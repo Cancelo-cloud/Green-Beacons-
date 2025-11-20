@@ -739,7 +739,9 @@
         }
         
         function closeBio() {
-            document.getElementById('bioModal').style.display = 'none';
+            document.getElementById('bioModal').addEventListener('click', function(e) {
+            if (e.target === this) closeBio();
+        });
         }
         </script>
 
