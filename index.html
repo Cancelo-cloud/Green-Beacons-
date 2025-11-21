@@ -14,6 +14,7 @@
             --text-muted: #6c757d;
             --jacaranda-dark: #6c3dd4;
             --jacaranda-light: #7c53c3;
+            --jacaranda-bright: #b589f4;
             --bg-white: #ffffff;
             --bg-light: #f8f9fa;
         }
@@ -66,36 +67,43 @@
             display: inline-block;
             background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
             color: white;
-            padding: 10px 20px;
+            padding: 10px 22px;
             border-radius: 24px;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 600;
-            box-shadow: 0 4px 12px rgba(45, 106, 79, 0.2);
+            box-shadow: 0 4px 18px 0 rgba(45, 106, 79, 0.28);
             cursor: pointer;
-            margin-bottom: 6px;
-            transition: box-shadow 0.2s;
+            margin-bottom: 15px;
+            margin-right: 18px;
+            transition: box-shadow 0.2s, transform 0.2s;
             border: none;
             outline: none;
-        }
-        .pill.clients { background: linear-gradient(135deg, var(--primary-dark), var(--primary-light)); }
-        .pill.participants {
-            background: linear-gradient(135deg, #b589f4 0%, #7c53c3 50%, #6c3dd4 100%);
-            color: #fff;
-            box-shadow: 0 0 16px 3px #b589f4, 0 4px 14px rgba(124, 83, 195, 0.18);
             position: relative;
-            overflow: hidden;
         }
+        .pill.clients { 
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+        }
+        .pill.participants { 
+            background: linear-gradient(135deg, var(--jacaranda-bright) 0%, var(--jacaranda-light) 88%, var(--jacaranda-dark) 100%);
+            color: #fff;
+            box-shadow: 0 0 13px 2px var(--jacaranda-bright), 0 4px 14px rgba(124, 83, 195, 0.12);
+        }
+        /* More subtle shine effect */
         .pill.participants::after {
             content: "";
             position: absolute;
-            top: 8px; left: 24px;
-            width: 80px; height: 22px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 80%);
-            border-radius: 18px;
-            filter: blur(2px);
+            top: 55%; left: 25%;
+            width: 34px; height: 12px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.33) 0%, rgba(255,255,255,0.01) 80%);
+            border-radius: 12px;
+            filter: blur(1.6px);
+            opacity: 0.6;
             pointer-events: none;
         }
-        .pill:hover { box-shadow: 0 6px 20px rgba(82,183,136,0.3); }
+        .pill:hover { box-shadow: 0 6px 26px rgba(82,183,136,0.32), 0 0 26px 2px var(--jacaranda-bright); transform: scale(1.03);}
+        
+        /* Space between pills */
+        .pill + .pill { margin-left: 8px; }
 
         .sidebar-card { background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(248,249,250,0.98) 100%); padding: 28px; border-radius: 16px; box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);}
         .sidebar-card strong { font-size: 17px; display: block; margin-bottom: 8px; background: linear-gradient(135deg, var(--primary-dark), var(--primary-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;background-clip: text; font-weight: 700;}
@@ -103,7 +111,7 @@
         .sidebar-section:first-child { margin-top: 0; padding-top: 0; border-top: none;}
         .sidebar-text { color: var(--text-muted); font-size: 14px; line-height: 1.6;}
 
-        /* New modals for clients/participants */
+        /* Modals for clients/participants */
         .modal {
             display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.68);
             z-index: 9999; justify-content: center; align-items: center;
@@ -214,8 +222,11 @@
                 <div class="model-text">
                     We train team leaders on digital skills, concise communication, and personal finance basics to ensure their reports are professional, their facilitation is effective, and their teams gain practical skills for the workplace.
                 </div>
-                <button class="pill clients" onclick="showClientsModal()">Target clients: NGOs • Municipalities • Community projects</button>
-                <button class="pill participants" onclick="showParticipantsModal()">Target participants: under-resourced individuals and emerging leaders</button>
+                <!-- Spaced pills -->
+                <div style="margin: 30px 0 18px 0;">
+                    <button class="pill clients" onclick="showClientsModal()">Target clients: NGOs • Municipalities • Community projects</button>
+                    <button class="pill participants" onclick="showParticipantsModal()">Target participants: under-resourced individuals and emerging leaders</button>
+                </div>
                 <div style="margin-top:24px;padding-top:24px;border-top:2px solid rgba(82, 183, 136, 0.2);">
                     <strong style="color:var(--primary-dark);font-size:17px;display:block;margin-bottom:8px">OUR MENTORS</strong>
                     <div style="color:var(--text-muted);font-size:14px;line-height:1.6">
@@ -252,8 +263,7 @@
                 </ul>
             </div>
         </div>
-        <!-- Existing Modal Logic + Next Sections -->
-        <!-- SERVICES GRID -->
+        <!-- Rest unchanged -->
         <div class="grid">
             <article class="card">
                 <h3>1. Digital Skills</h3>
@@ -368,82 +378,81 @@
         <script>
         // Director bios
         const bios = {
-        // ... unchanged bios object ...
-        samkelo: {
-            name: "Samkelo Madlala",
-            role: "Co-Director",
-            experience: `
-                <h3 style="color:var(--primary-dark); margin-bottom:0.75rem;">Experience</h3>
-                <ul style="line-height:1.7; color:var(--text-muted); margin-bottom:1.2rem; padding-left:1.2rem;">
-                    <li><strong>DUCT Rivers (2023–Present)</strong> – Training & Pathways Facilitator and Project Administrator, supporting youth development and organisational systems.</li>
-                    <li><strong>Wild Trust (2024–Present)</strong> – Interns Project Manager for the YES Nedbank Programme, overseeing 15–16 youth interns.</li>
-                    <li><strong>Mindset & Productivity Writer</strong> – Author of 100+ online blogs on mindset, learning, and personal mastery.</li>
-                </ul>
-                <h3 style="color:var(--primary-dark); margin-bottom:0.75rem;">Education & Certifications</h3>
-                <ul style="line-height:1.7; color:var(--text-muted); margin-bottom:1.2rem; padding-left:1.2rem;">
-                    <li>A2B Hardwires Interpretation Coach (In Progress)</li>
-                    <li>Advanced Emerging Leader, TLC Global (2024)</li>
-                    <li>Python & HTML Programming</li>
-                </ul>
-                <h3 style="color:var(--primary-dark); margin-bottom:1rem;">Hobbies</h3>
-                <p style="color:var(--text-muted); line-height:1.8;">
-                    Reading • Writing • Soccer • Exercise
-                </p>
-            `,
-            photo: "images/samkelo/samkelo-photo.jpg"
-        },
-        thabo: {
-            name: "Thabo Blessing Duma",
-            role: "Director",
-            experience: `
-                <h3 style="color:var(--primary-dark); margin-bottom:0.75rem;">Experience</h3>
-                <ul style="line-height:1.7; color:var(--text-muted); margin-bottom:1.2rem; padding-left:1.2rem;">
-                    <li><strong>GreenBeacons (Present)</strong> – Director, leading initiatives that blend environmental sustainability with personal development, equipping young people to become custodians of ecological infrastructure.</li>
-                    <li><strong>SANBI</strong> – Specialized in conservation and data systems management.</li>
-                    <li><strong>Ezemvelo KZN Wildlife</strong> – Gained expertise in conservation practices and environmental management.</li>
-                    <li><strong>Invasive Species Management</strong> – Led clearing initiatives in KwaZulu-Natal focused on ecological restoration.</li>
-                </ul>
-                <h3 style="color:var(--primary-dark); margin-bottom:0.75rem;">Speaking & Advocacy</h3>
-                <ul style="line-height:1.7; color:var(--text-muted); margin-bottom:1.2rem; padding-left:1.2rem;">
-                    <li><strong>World Youth Skills Day Dialogue</strong> – Featured speaker sharing insights on youth empowerment and green economies.</li>
-                    <li><strong>Africa Forward Summit</strong> – Engaged with policy makers on inclusive, sustainable development strategies.</li>
-                </ul>
-                <h3 style="color:var(--primary-dark); margin-bottom:1rem;">Mission</h3>
-                <p style="color:var(--text-muted); line-height:1.8;">
-                    Committed to shaping inclusive, green economies through youth empowerment. Believes that empowered youth are the key to thriving ecosystems and sustainable environmental stewardship.
-                </p>
-            `,
-            photo: "images/thabo/thabo-photo.jpg"
-        },
-        gina: {
-            name: "Sethabile Gina",
-            role: "Finance & Admin Manager",
-            experience: `
-                <h3 style="color:var(--primary-dark); margin-bottom:0.75rem;">Experience</h3>
-                <ul style="line-height:1.7; color:var(--text-muted); margin-bottom:1.2rem; padding-left:1.2rem;">
-                    <li><strong>DUCT Rivers (2024–Present)</strong> – Project Finance Administrator & Office Manager Assistant, managing payroll for 1,000+ employees and overseeing budget planning for multimillion-rand environmental projects.</li>
-                    <li><strong>Financial Leadership</strong> – Expertise in financial reporting, forecasting, and tender support for large-scale environmental initiatives.</li>
-                    <li><strong>Mentorship & Development</strong> – Mentors finance interns and develops reporting frameworks to strengthen organizational capacity.</li>
-                </ul>
-                <h3 style="color:var(--primary-dark); margin-bottom:0.75rem;">Education & Certifications</h3>
-                <ul style="line-height:1.7; color:var(--text-muted); margin-bottom:1.2rem; padding-left:1.2rem;">
-                    <li>A2B Transformative Leadership Programme (2025)</li>
-                    <li>Environmental Project Planning & Proposal Writing – GreenMatter (2025)</li>
-                    <li>Facilitation Programme – DUCT (2025)</li>
-                    <li>Data Science & Data Analytics – Cisco (2022–2025)</li>
-                    <li>AI for Everyone – Coursera (2024)</li>
-                </ul>
-                <h3 style="color:var(--primary-dark); margin-bottom:0.75rem;">Technical Skills</h3>
-                <p style="color:var(--text-muted); line-height:1.8; margin-bottom:1.2rem;">
-                    Project Budgeting & Payroll • Financial Reporting & Analysis • Excel (Models, Pivot Tables, Macros) • Sage • Kwantu.Me • Data Analytics
-                </p>
-                <h3 style="color:var(--primary-dark); margin-bottom:1rem;">Hobbies</h3>
-                <p style="color:var(--text-muted); line-height:1.8;">
-                    Reading • Aerobics • Swimming • Research
-                </p>
-            `,
-            photo: "images/gina/gina-photo.jpg"
-        }
+            samkelo: {
+                name: "Samkelo Madlala",
+                role: "Co-Director",
+                experience: `
+                    <h3 style="color:var(--primary-dark); margin-bottom:0.75rem;">Experience</h3>
+                    <ul style="line-height:1.7; color:var(--text-muted); margin-bottom:1.2rem; padding-left:1.2rem;">
+                        <li><strong>DUCT Rivers (2023–Present)</strong> – Training & Pathways Facilitator and Project Administrator, supporting youth development and organisational systems.</li>
+                        <li><strong>Wild Trust (2024–Present)</strong> – Interns Project Manager for the YES Nedbank Programme, overseeing 15–16 youth interns.</li>
+                        <li><strong>Mindset & Productivity Writer</strong> – Author of 100+ online blogs on mindset, learning, and personal mastery.</li>
+                    </ul>
+                    <h3 style="color:var(--primary-dark); margin-bottom:0.75rem;">Education & Certifications</h3>
+                    <ul style="line-height:1.7; color:var(--text-muted); margin-bottom:1.2rem; padding-left:1.2rem;">
+                        <li>A2B Hardwires Interpretation Coach (In Progress)</li>
+                        <li>Advanced Emerging Leader, TLC Global (2024)</li>
+                        <li>Python & HTML Programming</li>
+                    </ul>
+                    <h3 style="color:var(--primary-dark); margin-bottom:1rem;">Hobbies</h3>
+                    <p style="color:var(--text-muted); line-height:1.8;">
+                        Reading • Writing • Soccer • Exercise
+                    </p>
+                `,
+                photo: "images/samkelo/samkelo-photo.jpg"
+            },
+            thabo: {
+                name: "Thabo Blessing Duma",
+                role: "Director",
+                experience: `
+                    <h3 style="color:var(--primary-dark); margin-bottom:0.75rem;">Experience</h3>
+                    <ul style="line-height:1.7; color:var(--text-muted); margin-bottom:1.2rem; padding-left:1.2rem;">
+                        <li><strong>GreenBeacons (Present)</strong> – Director, leading initiatives that blend environmental sustainability with personal development, equipping young people to become custodians of ecological infrastructure.</li>
+                        <li><strong>SANBI</strong> – Specialized in conservation and data systems management.</li>
+                        <li><strong>Ezemvelo KZN Wildlife</strong> – Gained expertise in conservation practices and environmental management.</li>
+                        <li><strong>Invasive Species Management</strong> – Led clearing initiatives in KwaZulu-Natal focused on ecological restoration.</li>
+                    </ul>
+                    <h3 style="color:var(--primary-dark); margin-bottom:0.75rem;">Speaking & Advocacy</h3>
+                    <ul style="line-height:1.7; color:var(--text-muted); margin-bottom:1.2rem; padding-left:1.2rem;">
+                        <li><strong>World Youth Skills Day Dialogue</strong> – Featured speaker sharing insights on youth empowerment and green economies.</li>
+                        <li><strong>Africa Forward Summit</strong> – Engaged with policy makers on inclusive, sustainable development strategies.</li>
+                    </ul>
+                    <h3 style="color:var(--primary-dark); margin-bottom:1rem;">Mission</h3>
+                    <p style="color:var(--text-muted); line-height:1.8;">
+                        Committed to shaping inclusive, green economies through youth empowerment. Believes that empowered youth are the key to thriving ecosystems and sustainable environmental stewardship.
+                    </p>
+                `,
+                photo: "images/thabo/thabo-photo.jpg"
+            },
+            gina: {
+                name: "Sethabile Gina",
+                role: "Finance & Admin Manager",
+                experience: `
+                    <h3 style="color:var(--primary-dark); margin-bottom:0.75rem;">Experience</h3>
+                    <ul style="line-height:1.7; color:var(--text-muted); margin-bottom:1.2rem; padding-left:1.2rem;">
+                        <li><strong>DUCT Rivers (2024–Present)</strong> – Project Finance Administrator & Office Manager Assistant, managing payroll for 1,000+ employees and overseeing budget planning for multimillion-rand environmental projects.</li>
+                        <li><strong>Financial Leadership</strong> – Expertise in financial reporting, forecasting, and tender support for large-scale environmental initiatives.</li>
+                        <li><strong>Mentorship & Development</strong> – Mentors finance interns and develops reporting frameworks to strengthen organizational capacity.</li>
+                    </ul>
+                    <h3 style="color:var(--primary-dark); margin-bottom:0.75rem;">Education & Certifications</h3>
+                    <ul style="line-height:1.7; color:var(--text-muted); margin-bottom:1.2rem; padding-left:1.2rem;">
+                        <li>A2B Transformative Leadership Programme (2025)</li>
+                        <li>Environmental Project Planning & Proposal Writing – GreenMatter (2025)</li>
+                        <li>Facilitation Programme – DUCT (2025)</li>
+                        <li>Data Science & Data Analytics – Cisco (2022–2025)</li>
+                        <li>AI for Everyone – Coursera (2024)</li>
+                    </ul>
+                    <h3 style="color:var(--primary-dark); margin-bottom:0.75rem;">Technical Skills</h3>
+                    <p style="color:var(--text-muted); line-height:1.8; margin-bottom:1.2rem;">
+                        Project Budgeting & Payroll • Financial Reporting & Analysis • Excel (Models, Pivot Tables, Macros) • Sage • Kwantu.Me • Data Analytics
+                    </p>
+                    <h3 style="color:var(--primary-dark); margin-bottom:1rem;">Hobbies</h3>
+                    <p style="color:var(--text-muted); line-height:1.8;">
+                        Reading • Aerobics • Swimming • Research
+                    </p>
+                `,
+                photo: "images/gina/gina-photo.jpg"
+            }
         };
         function showBio(person) {
             const bio = bios[person];
