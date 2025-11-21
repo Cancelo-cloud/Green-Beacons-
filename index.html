@@ -78,10 +78,22 @@
             outline: none;
         }
         .pill.clients { background: linear-gradient(135deg, var(--primary-dark), var(--primary-light)); }
-        .pill.participants { 
-            background: linear-gradient(135deg, var(--jacaranda-light), var(--jacaranda-dark)); 
+        .pill.participants {
+            background: linear-gradient(135deg, #b589f4 0%, #7c53c3 50%, #6c3dd4 100%);
             color: #fff;
-            box-shadow: 0 4px 14px rgba(124, 83, 195, 0.18); 
+            box-shadow: 0 0 16px 3px #b589f4, 0 4px 14px rgba(124, 83, 195, 0.18);
+            position: relative;
+            overflow: hidden;
+        }
+        .pill.participants::after {
+            content: "";
+            position: absolute;
+            top: 8px; left: 24px;
+            width: 80px; height: 22px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 80%);
+            border-radius: 18px;
+            filter: blur(2px);
+            pointer-events: none;
         }
         .pill:hover { box-shadow: 0 6px 20px rgba(82,183,136,0.3); }
 
