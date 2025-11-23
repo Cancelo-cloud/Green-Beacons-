@@ -581,22 +581,29 @@
         </script>
 
         <script>
-        function openModal(id) {
-            document.getElementById(id).style.display = "flex";
-            document.body.style.overflow = "hidden";   // prevent background scroll
-        }
+        document.addEventListener("DOMContentLoaded", function() {
+            const tips = document.querySelectorAll('.tip'); // make sure each tip has class "tip"
         
-        function closeModal(id) {
-            document.getElementById(id).style.display = "none";
-            document.body.style.overflow = "auto";     // restore scroll
-        }
+            function toggleTip(e) {
+                e.preventDefault(); // prevents double triggering on mobile
+                tips.forEach(t => {
+                    if (t !== this) {
+                        t.classList.remove('active'); // close other tips
+                    }
+                });
+                this.classList.toggle('active'); // toggle current tip
+            }
         
-        // Connect to existing functions
-        function showBio(who) { openModal("bioModal"); }
-        function closeBio() { closeModal("bioModal"); }
+            tips.forEach(tip => {
+                tip.addEventListener('click', toggleTip);
+                tip.addEventListener('touchstart', toggleTip); // mobile support
+            });
         
-        function showPSModal() { openModal("psModal"); }
-        function closePSModal() { closeModal("psModal"); }
+            // Optional: reset tips if user navigates back or reloads page
+            window.addEventListener('pageshow', () => {
+                tips.forEach(t => t.classList.remove('active'));
+            });
+        });
         </script>
 
         <!-- FOOTER -->
