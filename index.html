@@ -277,33 +277,147 @@
                 <div id="bioContent"></div>
             </div>
         </div>
+        
         <!-- PUBLIC SPEAKING MATERIAL MODAL -->
         <div class="modal" id="psModal" aria-modal="true" role="dialog">
-            <div class="modal-content" style="max-width:600px;">
+            <div class="modal-content" style="max-width:700px;">
                 <button class="close-modal" onclick="closePSModal()" aria-label="Close">&times;</button>
                 <h2 style="text-align:center; color:var(--primary-dark); margin-bottom:1rem;">Public Speaking & Communication</h2>
                 <p style="text-align:center; color:var(--text-muted); margin-bottom:0.5rem; font-size:1rem;">
                     <strong>Previous Meetings Held:</strong> <span style="color:var(--primary-dark); font-weight:600;">0*</span>
                 </p>
                 <hr style="border:none; border-top:1px solid #e0e0e0; margin:1.5rem 0;">
+                
+                <h3 style="color:var(--primary-dark); margin-bottom:1rem; font-size:1.1rem;">Meeting Material</h3>
+                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap:1rem; margin-bottom:2rem;">
+                    <button onclick="showSpeakerTypes()" style="background:linear-gradient(135deg,#52b788,#2d6a4f);color:white;font-weight:600;padding:15px;border:none;border-radius:13px;cursor:pointer;transition:transform 0.2s;">
+                        🎭 Types of Speakers
+                    </button>
+                    <button onclick="showFeedbackFocus()" style="background:linear-gradient(135deg,#52b788,#2d6a4f);color:white;font-weight:600;padding:15px;border:none;border-radius:13px;cursor:pointer;transition:transform 0.2s;">
+                        📝 Feedback Focus
+                    </button>
+                    <button onclick="showTopics()" style="background:linear-gradient(135deg,#52b788,#2d6a4f);color:white;font-weight:600;padding:15px;border:none;border-radius:13px;cursor:pointer;transition:transform 0.2s;">
+                        💡 Meeting Topics
+                    </button>
+                    <button onclick="showTips()" style="background:linear-gradient(135deg,#52b788,#2d6a4f);color:white;font-weight:600;padding:15px;border:none;border-radius:13px;cursor:pointer;transition:transform 0.2s;">
+                        ✨ Tips
+                    </button>
+                </div>
+
+                <!-- Content Display Area -->
+                <div id="psContentArea" style="background:#f8f9fa;padding:1.5rem;border-radius:13px;min-height:200px;margin-bottom:2rem;display:none;">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+
+                <hr style="border:none; border-top:1px solid #e0e0e0; margin:1.5rem 0;">
                 <h3 style="color:var(--primary-dark); margin-bottom:1rem; font-size:1.1rem;">Previous Meetings Material</h3>
-                <ul style="list-style: none; padding-left: 0; margin-bottom:1.5rem;">
-                    <li style="margin-bottom:1rem;">
-                        <a href="downloads/22.11.2025__online_session_.pdf" target="_blank" style="background:linear-gradient(135deg,#52b788,#2d6a4f);color:white;font-weight:600;padding:12px 22px;border-radius:13px;text-decoration:none;display:inline-block; width:100%; text-align:center;">
-                            <span style="margin-right:8px;">📑</span> No date yet – Online Session Material
-                        </a>
-                    </li>
-                    <li style="margin-bottom:1rem;">
-                        <a href="downloads/Meeting_Tracking_Register_-_Business_Buddies__.pdf" target="_blank" style="background:linear-gradient(135deg,#52b788,#2d6a4f);color:white;font-weight:600;padding:12px 22px;border-radius:13px;text-decoration:none;display:inline-block; width:100%; text-align:center;">
-                            <span style="margin-right:8px;">📑</span> No date yet – 
-                        </a>
-                    </li>
-                </ul>
-                <p style="color:#2d6a4f; text-align:center; font-size:14px;">
+                <p style="text-align:center; color:var(--text-muted); font-style:italic; padding:2rem;">
+                    No previous meetings yet. Check back soon!
+                </p>
+                
+                <p style="color:#2d6a4f; text-align:center; font-size:14px; margin-top:1rem;">
                     Need something specific? <a href="#contact" style="color:#52b788;text-decoration:underline;">Request custom material &rarr;</a>
                 </p>
             </div>
         </div>
+
+        <script>
+        // Public Speaking Modal Functions
+        function closePSModal() {
+            document.getElementById('psModal').style.display = 'none';
+        }
+        
+        // Open Public Speaking Modal
+        document.getElementById('publicSpeakingCard').addEventListener('click', function() {
+            document.getElementById('psModal').style.display = 'flex';
+        });
+        
+        // Types of Speakers
+        function showSpeakerTypes() {
+            const content = document.getElementById('psContentArea');
+            content.style.display = 'block';
+            content.innerHTML = `
+                <h4 style="color:var(--primary-dark); margin-bottom:1rem; text-align:center;">Types of Speakers</h4>
+                <div style="text-align:center;">
+                    <img src="types_of_speakers.png" alt="Types of Speakers" style="max-width:100%; height:auto; border-radius:10px; box-shadow:0 4px 6px rgba(0,0,0,0.1);">
+                </div>
+                <p style="text-align:center; margin-top:1rem; color:var(--text-muted); font-size:0.9rem;">
+                    Identify your speaking style and learn to leverage your strengths!
+                </p>
+            `;
+            content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        // Feedback Focus
+        function showFeedbackFocus() {
+            const content = document.getElementById('psContentArea');
+            content.style.display = 'block';
+            content.innerHTML = `
+                <h4 style="color:var(--primary-dark); margin-bottom:1rem; text-align:center;">Feedback Focus</h4>
+                <p style="color:var(--text-muted); margin-bottom:1.5rem; text-align:center;">Here's what we'll review to help you improve:</p>
+                <ul style="color:#000000; line-height:2; padding-left:1.5rem; font-size:1rem;">
+                    <li><strong>Filler words:</strong> Count "uhm," "like," "you know"</li>
+                    <li><strong>Pacing:</strong> Too fast or too slow?</li>
+                    <li><strong>Voice:</strong> Monotone vs. expressive; volume strong or soft?</li>
+                    <li><strong>Message clarity:</strong> Is the central message clear? Does the story/argument flow logically?</li>
+                    <li><strong>Opening & ending:</strong> Did they start confidently? Did the ending land with strength and purpose?</li>
+                </ul>
+            `;
+            content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        // Meeting Topics
+        function showTopics() {
+            const content = document.getElementById('psContentArea');
+            content.style.display = 'block';
+            content.innerHTML = `
+                <h4 style="color:var(--primary-dark); margin-bottom:1rem; text-align:center;">Meeting Topics to Choose From</h4>
+                <div style="background:white; padding:1.5rem; border-radius:10px;">
+                    <ol style="color:#000000; line-height:2; padding-left:1.5rem; font-size:1rem;">
+                        <li>A Moment That Changed How I See Myself</li>
+                        <li>What I Believe Every Young Person Should Learn Early</li>
+                        <li>A Story of Failure That Made Me Stronger</li>
+                        <li>Why Communities Grow Stronger When We Help Each Other</li>
+                        <li>The Mistake That Taught Me My Biggest Lesson</li>
+                        <li>If Someone Took Control of my Life Tomorrow, What's The First Thing They Would Change?</li>
+                    </ol>
+                </div>
+            `;
+            content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        // Tips
+        function showTips() {
+            const content = document.getElementById('psContentArea');
+            content.style.display = 'block';
+            content.innerHTML = `
+                <h4 style="color:var(--primary-dark); margin-bottom:1rem; text-align:center;">Tips for 2-3 Minute Speeches</h4>
+                <div style="background:white; padding:1.5rem; border-radius:10px; border:2px solid var(--primary-light);">
+                    <div style="margin-bottom:1.5rem;">
+                        <strong style="color:var(--primary-dark); font-size:1.1rem;">OPENING</strong>
+                        <p style="color:#000000; font-size:0.95rem; margin-top:0.5rem; line-height:1.6;">Your first 30 seconds. Grab attention, make them curious, and make them care. Use a question, a bold statement, or paint a picture that pulls them in immediately.</p>
+                    </div>
+                    <div style="margin-bottom:1.5rem;">
+                        <strong style="color:var(--primary-dark); font-size:1.1rem;">MESSAGE</strong>
+                        <p style="color:#000000; font-size:0.95rem; margin-top:0.5rem; line-height:1.6;">The heart of your story. This is your lesson, your truth, your experience. Share what happened, what you learned, and why it matters. Keep it real and relatable.</p>
+                    </div>
+                    <div style="margin-bottom:1.5rem;">
+                        <strong style="color:var(--primary-dark); font-size:1.1rem;">CLOSING</strong>
+                        <p style="color:#000000; font-size:0.95rem; margin-top:0.5rem; line-height:1.6;">Your last words stick with them after you're done. Leave them inspired, challenged, or changed. End with a call to action, a powerful question, or a statement they'll remember long after they leave.</p>
+                    </div>
+                    <div style="background:linear-gradient(135deg,#52b788,#2d6a4f); padding:1.2rem; border-radius:10px; text-align:center;">
+                        <p style="color:white; font-weight:600; font-style:italic; margin:0; font-size:1.05rem;">Remember: People forget what you said, but they never forget how you made them feel.</p>
+                    </div>
+                </div>
+            `;
+            content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('psModal').addEventListener('click', function(e) {
+            if (e.target === this) closePSModal();
+        });
+        </script>
         
         <script>
         // Director bios
