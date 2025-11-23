@@ -2,148 +2,189 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>GreenBeacons Coaching | Occupational Intelligence & Transformation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GreenBeacons - Public Speaking & Coaching</title>
     <style>
-        /* ... all your existing CSS remains unchanged ... */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+        }
+        header {
+            background: #0a3d62;
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+        }
+        .section {
+            padding: 3rem 1.5rem;
+            max-width: 1100px;
+            margin: auto;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            transition: 0.3s;
+        }
         .modal {
             display: none;
             position: fixed;
-            top: 0; left: 0;
-            width: 100vw; height: 100vh;
-            background: rgba(0,0,0,0.85);
-            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.65);
+            backdrop-filter: blur(4px);
             justify-content: center;
             align-items: center;
-            overflow-y: auto;
+            padding: 2rem;
         }
-        /* ... rest of your CSS ... */
+        .modal-box {
+            background: #fff;
+            padding: 2rem;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 14px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+            position: relative;
+        }
+        .close-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            cursor: pointer;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
-    <!-- ... all your existing page content up to the services grid ... -->
 
-    <!-- PUBLIC SPEAKING CARD (opens modal) -->
-    <article class="card public-speaking" id="publicSpeakingCard" tabindex="0" onclick="openPSModal()" style="cursor:pointer;">
-        <h3>2. Public Speaking & Communication</h3>
-        <div class="card-desc">Two-minute presentations • Clear instructions • Selling yourself and your work</div>
-        <div class="card-outcome">
-            <strong>Outcome:</strong> confident team leaders who can run huddles, give feedback, and represent their teams.
+<header>
+    <h1>GreenBeacons Coaching</h1>
+    <p>Public Speaking • Leadership Training • Coaching Excellence</p>
+</header>
+
+<section class="section" id="team">
+    <h2>Meet The Team</h2>
+    <div class="team-grid">
+        <div class="card" onclick="showBio('sam')">
+            <h3>Samkelo</h3>
+            <p>Co-Director</p>
         </div>
-    </article>
-
-    <!-- ... rest of the grid and sections ... -->
-
-    <!-- PUBLIC SPEAKING MATERIAL MODAL (fixed – only ONE instance, properly structured) -->
-    <div class="modal" id="psModal" aria-modal="true" role="dialog">
-        <div class="modal-content" style="max-width:700px;">
-            <button class="close-modal" onclick="closePSModal()" aria-label="Close">×</button>
-            <h2 style="text-align:center; color:var(--primary-dark); margin-bottom:1rem;">Public Speaking & Communication</h2>
-            <p style="text-align:center; color:var(--text-muted); margin-bottom:0.5rem; font-size:1rem;">
-                <strong>Previous Meetings Held:</strong> <span style="color:var(--primary-dark); font-weight:600;">0*</span>
-            </p>
-            <hr style="border:none; border-top:1px solid #e0e0e0; margin:1.5rem 0;">
-
-            <h3 style="color:var(--primary-dark); margin-bottom:1rem; font-size:1.1rem;">Meeting Material</h3>
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap:1rem; margin-bottom:2rem;">
-                <button onclick="showSpeakerTypes()" style="background:linear-gradient(135deg,#52b788,#2d6a4f);color:white;font-weight:600;padding:15px;border:none;border-radius:13px;cursor:pointer;transition:transform 0.2s;">
-                    Types of Speakers
-                </button>
-                <button onclick="showFeedbackFocus()" style="background:linear-gradient(135deg,#52b788,#2d6a4f);color:white;font-weight:600;padding:15px;border:none;border-radius:13px;cursor:pointer;transition:transform 0.2s;">
-                    Feedback Focus
-                </button>
-                <button onclick="showTopics()" style="background:linear-gradient(135deg,#52b788,#2d6a4f);color:white;font-weight:600;padding:15px;border:none;border-radius:13px;cursor:pointer;transition:transform 0.2s;">
-                    Meeting Topics
-                </button>
-                <button onclick="showTips()" style="background:linear-gradient(135deg,#52b788,#2d6a4f);color:white;font-weight:600;padding:15px;border:none;border-radius:13px;cursor:pointer;transition:transform 0.2s;">
-                    Tips
-                </button>
-            </div>
-
-            <!-- Dynamic Content Area (only ONE) -->
-            <div id="psContentArea" style="background:#f8f9fa;padding:1.5rem;border-radius:13px;min-height:200px;margin-bottom:2rem;display:none;">
-                <!-- Content inserted by JS -->
-            </div>
-
-            <hr style="border:none; border-top:1px solid #e0e0e0; margin:1.5rem 0;">
-            <h3 style="color:var(--primary-dark); margin-bottom:1rem; font-size:1.1rem;">Previous Meetings Material</h3>
-            <p style="text-align:center; color:var(--text-muted); font-style:italic; padding:2rem;">
-                No previous meetings yet. Check back soon!
-            </p>
-
-            <p style="color:#2d6a4f; text-align:center; font-size:14px; margin-top:1rem;">
-                Need something specific? <a href="#contact" style="color:#52b788;text-decoration:underline;">Request custom material →</a>
-            </p>
+        <div class="card" onclick="showBio('thabo')">
+            <h3>Thabo</h3>
+            <p>Co-Director</p>
+        </div>
+        <div class="card" onclick="showBio('gina')">
+            <h3>Gina</h3>
+            <p>Lead Facilitator</p>
         </div>
     </div>
+</section>
 
-    <script>
-        // ==== PUBLIC SPEAKING MODAL FUNCTIONS ====
-        function openPSModal() {
-            document.getElementById('psModal').style.display = 'flex';
-            document.getElementById('psContentArea').style.display = 'none'; // reset
-        }
+<section class="section" id="publicSpeaking">
+    <h2>Public Speaking Material</h2>
+    <div class="team-grid">
+        <div class="card" id="publicSpeakingCard">
+            <h3>Open Materials</h3>
+            <p>Speaker types • Techniques • Feedback focus • Tips</p>
+        </div>
+    </div>
+</section>
 
-        function closePSModal() {
-            document.getElementById('psModal').style.display = 'none';
-        }
+<!-- BIO MODAL -->
+<div class="modal" id="bioModal">
+    <div class="modal-box">
+        <span class="close-btn" onclick="closeBio()">×</span>
+        <div id="bioContent"></div>
+    </div>
+</div>
 
-        // Close modal when clicking outside content
-        document.getElementById('psModal').addEventListener('click', function(e) {
-            if (e.target === this) closePSModal();
-        });
+<!-- PUBLIC SPEAKING MODAL -->
+<div class="modal" id="psModal">
+    <div class="modal-box">
+        <span class="close-btn" onclick="closePSModal()">×</span>
+        <div id="psContent">
+            <h2>Public Speaking Materials</h2>
+            <p>Choose content:</p>
+            <div class="team-grid">
+                <div class="card" onclick="showSpeakerTypes()">Speaker Types</div>
+                <div class="card" onclick="showFeedbackFocus()">Feedback Focus</div>
+                <div class="card" onclick="showTopics()">Topics</div>
+                <div class="card" onclick="showTips()">Tips</div>
+            </div>
+            <div id="psDynamic" style="margin-top:1.5rem;"></div>
+        </div>
+    </div>
+</div>
 
-        // Example content functions (replace with your real content later)
-        function showSpeakerTypes() {
-            document.getElementById('psContentArea').innerHTML = `
-                <h4 style="margin-bottom:1rem;color:var(--primary-dark);">Types of Speakers</h4>
-                <ul style="line-height:1.8;color:var(--text-muted);">
-                    <li><strong>Informative Speaker</strong> – Shares knowledge</li>
-                    <li><strong>Persuasive Speaker</strong> – Influences decisions</li>
-                    <li><strong>Motivational Speaker</strong> – Inspires action</li>
-                    <li><strong>Entertaining Speaker</strong> – Engages & delights</li>
-                </ul>`;
-            document.getElementById('psContentArea').style.display = 'block';
-        }
+<script>
+// BIOS DATABASE
+const bios = {
+    sam: `<h2>Samkelo</h2><p>Co-Director bio details here.</p>`,
+    thabo: `<h2>Thabo</h2><p>Co-Director bio details here.</p>`,
+    gina: `<h2>Gina</h2><p>Lead Facilitator bio details here.</p>`
+};
 
-        function showFeedbackFocus() {
-            document.getElementById('psContentArea').innerHTML = `
-                <h4 style="margin-bottom:1rem;color:var(--primary-dark);">Today's Feedback Focus</h4>
-                <p style="color:var(--text-muted);"><strong>Clarity of Message</strong> – Was the main point easy to follow?</p>
-                <p style="color:var(--text-muted);"><strong>Voice Projection & Pace</strong></p>
-                <p style="color:var(--text-muted);"><strong>Body Language & Eye Contact</strong></p>`;
-            document.getElementById('psContentArea').style.display = 'block';
-        }
+// SHOW BIO
+function showBio(person) {
+    document.getElementById("bioModal").style.display = "flex";
+    document.getElementById("bioContent").innerHTML = bios[person];
+}
+function closeBio() {
+    document.getElementById("bioModal").style.display = "none";
+}
 
-        function showTopics() {
-            document.getElementById('psContentArea').innerHTML = `
-                <h4 style="margin-bottom:1rem;color:var(--primary-dark);">Upcoming Meeting Topics</h4>
-                <ol style="line-height:1.8;color:var(--text-muted);">
-                    <li>Week 1 – 2-minute introductions</li>
-                    <li>Week 2 – Giving clear instructions</li>
-                    <li>Week 3 – Selling an idea/project</li>
-                    <li>Week 4 – Handling Q&A confidently</li>
-                </ol>`;
-            document.getElementById('psContentArea').style.display = 'block';
-        }
+// PUBLIC SPEAKING CARD ONCLICK
+const psCard = document.getElementById("publicSpeakingCard");
+psCard.onclick = function() {
+    document.getElementById("psModal").style.display = "flex";
+};
 
-        function showTips() {
-            document.getElementById('psContentArea').innerHTML = `
-                <h4 style="margin-bottom:1rem;color:var(--primary-dark);">Quick Public Speaking Tips</h4>
-                <ul style="line-height:1.8;color:var(--text-muted);">
-                    <li>Start with a strong hook in the first 10 seconds</li>
-                    <li>Use the rule of three for memorable points</li>
-                    <li>Pause for 2–3 seconds after key statements</li>
-                    <li>Smile – it instantly builds connection</li>
-                </ul>`;
-            document.getElementById('psContentArea').style.display = 'block';
-        }
+// PUBLIC SPEAKING CONTENT HANDLERS
+function showSpeakerTypes() {
+    document.getElementById("psDynamic").innerHTML = `
+        <h3>Speaker Types</h3>
+        <p>Content describing the 8 types of speakers...</p>
+    `;
+}
+function showFeedbackFocus() {
+    document.getElementById("psDynamic").innerHTML = `
+        <h3>Feedback Focus</h3>
+        <p>How to evaluate and give high‑quality public speaking feedback...</p>
+    `;
+}
+function showTopics() {
+    document.getElementById("psDynamic").innerHTML = `
+        <h3>Topics</h3>
+        <p>Public speaking topics and session outlines...</p>
+    `;
+}
+function showTips() {
+    document.getElementById("psDynamic").innerHTML = `
+        <h3>Speaking Tips</h3>
+        <p>Practical guidance on voice, structure, confidence...</p>
+    `;
+}
 
-        // Existing bio modal functions remain unchanged...
-        // ... (your existing script for bios, contact modal, etc.) ...
-    </script>
-
-    <!-- Rest of your page (contact section, footer, etc.) remains exactly the same -->
+function closePSModal() {
+    document.getElementById("psModal").style.display = "none";
+}
+</script>
 
 </body>
 </html>
+
