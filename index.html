@@ -112,8 +112,17 @@
             z-index: 9999; justify-content: center; align-items: center; overflow-y: auto;
         }
         .modal-content {
-            background: white; padding: 2.5rem; border-radius: 16px; max-width: 700px; position: relative;
-            margin: 2rem; box-sizing: border-box;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            max-width: 700px;
+            width: 90%;
+            position: relative;
+            margin: 2rem auto;
+            max-height: 90vh;        /* important */
+            overflow-y: auto;        /* needed for scrolling */
+            pointer-events: auto;    /* ensures modal receives scroll events */
+            box-sizing: border-box;
         }
         .close-modal {
             position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 2rem; cursor: pointer; color: var(--text-muted);
@@ -331,9 +340,8 @@
         document.getElementById('publicSpeakingCard').addEventListener('click', function() {
             document.getElementById('psModal').style.display = 'flex';
         });
-        
         // Types of Speakers
-        function showSpeakerTypes() {
+            function showSpeakerTypes() {
             const content = document.getElementById('psContentArea');
             content.style.display = 'block';
             content.innerHTML = `
@@ -345,9 +353,10 @@
                     Identify your speaking style and learn to leverage your strengths!
                 </p>
             `;
-            content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            // removed scrollIntoView so the top buttons remain visible / clickable
+            content.focus && content.focus();
         }
-        
+    
         // Feedback Focus
         function showFeedbackFocus() {
             const content = document.getElementById('psContentArea');
@@ -363,9 +372,10 @@
                     <li><strong>Opening & ending:</strong> Did they start confidently? Did the ending land with strength and purpose?</li>
                 </ul>
             `;
-            content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            // removed scrollIntoView so the top buttons remain visible / clickable
+            content.focus && content.focus();
         }
-        
+    
         // Meeting Topics
         function showTopics() {
             const content = document.getElementById('psContentArea');
@@ -383,9 +393,10 @@
                     </ol>
                 </div>
             `;
-            content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            // removed scrollIntoView so the top buttons remain visible / clickable
+            content.focus && content.focus();
         }
-        
+    
         // Tips
         function showTips() {
             const content = document.getElementById('psContentArea');
@@ -410,13 +421,9 @@
                     </div>
                 </div>
             `;
-            content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            // removed scrollIntoView so the top buttons remain visible / clickable
+            content.focus && content.focus();
         }
-        
-        // Close modal when clicking outside
-        document.getElementById('psModal').addEventListener('click', function(e) {
-            if (e.target === this) closePSModal();
-        });
         </script>
         
         <script>
@@ -572,6 +579,33 @@
             if (e.target === this) closeContactModal();
         });
         </script>
+
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const tips = document.querySelectorAll('.tip'); // make sure each tip has class "tip"
+        
+            function toggleTip(e) {
+                e.preventDefault(); // prevents double triggering on mobile
+                tips.forEach(t => {
+                    if (t !== this) {
+                        t.classList.remove('active'); // close other tips
+                    }
+                });
+                this.classList.toggle('active'); // toggle current tip
+            }
+        
+            tips.forEach(tip => {
+                tip.addEventListener('click', toggleTip);
+                tip.addEventListener('touchstart', toggleTip); // mobile support
+            });
+        
+            // Optional: reset tips if user navigates back or reloads page
+            window.addEventListener('pageshow', () => {
+                tips.forEach(t => t.classList.remove('active'));
+            });
+        });
+        </script>
+
         <!-- FOOTER -->
         <footer>
             <div>GreenBeacons — Practical coaching for real results</div>
