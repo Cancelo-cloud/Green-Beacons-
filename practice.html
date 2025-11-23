@@ -331,9 +331,8 @@
         document.getElementById('publicSpeakingCard').addEventListener('click', function() {
             document.getElementById('psModal').style.display = 'flex';
         });
-        
         // Types of Speakers
-        function showSpeakerTypes() {
+            function showSpeakerTypes() {
             const content = document.getElementById('psContentArea');
             content.style.display = 'block';
             content.innerHTML = `
@@ -345,9 +344,10 @@
                     Identify your speaking style and learn to leverage your strengths!
                 </p>
             `;
-            content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            // removed scrollIntoView so the top buttons remain visible / clickable
+            content.focus && content.focus();
         }
-        
+    
         // Feedback Focus
         function showFeedbackFocus() {
             const content = document.getElementById('psContentArea');
@@ -363,9 +363,10 @@
                     <li><strong>Opening & ending:</strong> Did they start confidently? Did the ending land with strength and purpose?</li>
                 </ul>
             `;
-            content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            // removed scrollIntoView so the top buttons remain visible / clickable
+            content.focus && content.focus();
         }
-        
+    
         // Meeting Topics
         function showTopics() {
             const content = document.getElementById('psContentArea');
@@ -383,9 +384,10 @@
                     </ol>
                 </div>
             `;
-            content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            // removed scrollIntoView so the top buttons remain visible / clickable
+            content.focus && content.focus();
         }
-        
+    
         // Tips
         function showTips() {
             const content = document.getElementById('psContentArea');
@@ -410,13 +412,9 @@
                     </div>
                 </div>
             `;
-            content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            // removed scrollIntoView so the top buttons remain visible / clickable
+            content.focus && content.focus();
         }
-        
-        // Close modal when clicking outside
-        document.getElementById('psModal').addEventListener('click', function(e) {
-            if (e.target === this) closePSModal();
-        });
         </script>
         
         <script>
