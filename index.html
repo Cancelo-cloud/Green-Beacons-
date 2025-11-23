@@ -277,62 +277,29 @@
                 <div id="bioContent"></div>
             </div>
         </div>
-        
         <!-- PUBLIC SPEAKING MATERIAL MODAL -->
         <div class="modal" id="psModal" aria-modal="true" role="dialog">
-            <div class="modal-content" style="max-width:700px;">
+            <div class="modal-content" style="max-width:600px;">
                 <button class="close-modal" onclick="closePSModal()" aria-label="Close">&times;</button>
                 <h2 style="text-align:center; color:var(--primary-dark); margin-bottom:1rem;">Public Speaking & Communication</h2>
                 <p style="text-align:center; color:var(--text-muted); margin-bottom:0.5rem; font-size:1rem;">
                     <strong>Previous Meetings Held:</strong> <span style="color:var(--primary-dark); font-weight:600;">0*</span>
                 </p>
                 <hr style="border:none; border-top:1px solid #e0e0e0; margin:1.5rem 0;">
-                
-                <h3 style="color:var(--primary-dark); margin-bottom:1rem; font-size:1.1rem;">Meeting Material</h3>
-                <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap:1rem; margin-bottom:2rem;">
-                    <button onclick="showSpeakerTypes()" style="background:linear-gradient(135deg,#52b788,#2d6a4f);color:white;font-weight:600;padding:15px;border:none;border-radius:13px;cursor:pointer;transition:transform 0.2s;">
-                        🎭 Types of Speakers
-                    </button>
-                    <button onclick="showFeedbackFocus()" style="background:linear-gradient(135deg,#52b788,#2d6a4f);color:white;font-weight:600;padding:15px;border:none;border-radius:13px;cursor:pointer;transition:transform 0.2s;">
-                        📝 Feedback Focus
-                    </button>
-                    <button onclick="showTopics()" style="background:linear-gradient(135deg,#52b788,#2d6a4f);color:white;font-weight:600;padding:15px;border:none;border-radius:13px;cursor:pointer;transition:transform 0.2s;">
-                        💡 Meeting Topics
-                    </button>
-                    <button onclick="showTips()" style="background:linear-gradient(135deg,#52b788,#2d6a4f);color:white;font-weight:600;padding:15px;border:none;border-radius:13px;cursor:pointer;transition:transform 0.2s;">
-                        ✨ Tips
-                    </button>
-                </div>
-
-                <!-- Content Display Area -->
-                <div id="psContentArea" style="background:#f8f9fa;padding:1.5rem;border-radius:13px;min-height:200px;margin-bottom:2rem;display:none;">
-                    <!-- Dynamic content will be inserted here -->
-                        </div>
-        
-                        <hr style="border:none; border-top:1px solid #e0e0e0; margin:1.5rem 0;">
-                        <h3 style="color:var(--primary-dark); margin-bottom:1rem; font-size:1.1rem;">Previous Meetings Material</h3>
-                        <p style="text-align:center; color:var(--text-muted); font-style:italic; padding:2rem;">
-                            No previous meetings yet. Check back soon!
-                        </p>
-                        
-                        <p style="color:#2d6a4f; text-align:center; font-size:14px; margin-top:1rem;">
-                            Need something specific? <a href="#contact" style="color:#52b788;text-decoration:underline;">Request custom material &rarr;</a>
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Content Display Area -->
-                <div id="psContentArea" style="background:#f8f9fa;padding:1.5rem;border-radius:13px;min-height:200px;margin-bottom:2rem;display:none;">
-                    <!-- Dynamic content will be inserted here -->
-                </div>
-
-                <hr style="border:none; border-top:1px solid #e0e0e0; margin:1.5rem 0;">
                 <h3 style="color:var(--primary-dark); margin-bottom:1rem; font-size:1.1rem;">Previous Meetings Material</h3>
-                <p style="text-align:center; color:var(--text-muted); font-style:italic; padding:2rem;">
-                    No previous meetings yet. Check back soon!
-                </p>
-                
-                <p style="color:#2d6a4f; text-align:center; font-size:14px; margin-top:1rem;">
+                <ul style="list-style: none; padding-left: 0; margin-bottom:1.5rem;">
+                    <li style="margin-bottom:1rem;">
+                        <a href="downloads/22.11.2025__online_session_.pdf" target="_blank" style="background:linear-gradient(135deg,#52b788,#2d6a4f);color:white;font-weight:600;padding:12px 22px;border-radius:13px;text-decoration:none;display:inline-block; width:100%; text-align:center;">
+                            <span style="margin-right:8px;">📑</span> No date yet – Online Session Material
+                        </a>
+                    </li>
+                    <li style="margin-bottom:1rem;">
+                        <a href="downloads/Meeting_Tracking_Register_-_Business_Buddies__.pdf" target="_blank" style="background:linear-gradient(135deg,#52b788,#2d6a4f);color:white;font-weight:600;padding:12px 22px;border-radius:13px;text-decoration:none;display:inline-block; width:100%; text-align:center;">
+                            <span style="margin-right:8px;">📑</span> No date yet – 
+                        </a>
+                    </li>
+                </ul>
+                <p style="color:#2d6a4f; text-align:center; font-size:14px;">
                     Need something specific? <a href="#contact" style="color:#52b788;text-decoration:underline;">Request custom material &rarr;</a>
                 </p>
             </div>
@@ -441,7 +408,17 @@
                 if (e.target === this) closePSModal();
             });
         });
-        
+        // Public Speaking Service modal logic
+        document.getElementById('publicSpeakingCard').addEventListener('click', showPSModal);
+        document.getElementById('publicSpeakingCard').addEventListener('keypress', function(e){
+            if(e.key==='Enter'||e.key===' ') showPSModal();
+        });
+        function showPSModal() {
+            document.getElementById('psModal').style.display = 'flex';
+        }
+        function closePSModal() {
+            document.getElementById('psModal').style.display = 'none';
+        }
         </script>
         <!-- CTA / CONTACT -->
         <section id="contact" class="cta-section">
