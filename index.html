@@ -440,17 +440,7 @@
                 if (e.target === this) closePSModal();
             });
         });
-        // Public Speaking Service modal logic
-        document.getElementById('publicSpeakingCard').addEventListener('click', showPSModal);
-        document.getElementById('publicSpeakingCard').addEventListener('keypress', function(e){
-            if(e.key==='Enter'||e.key===' ') showPSModal();
-        });
-        function showPSModal() {
-            document.getElementById('psModal').style.display = 'flex';
-        }
-        function closePSModal() {
-            document.getElementById('psModal').style.display = 'none';
-        }
+        
         </script>
         <!-- CTA / CONTACT -->
         <section id="contact" class="cta-section">
