@@ -312,12 +312,10 @@
                         ✨ Tips
                     </button>
                 </div>
-
                 <!-- Content Display Area -->
                 <div id="psContentArea" style="background:#f8f9fa;padding:1.5rem;border-radius:13px;min-height:200px;margin-bottom:2rem;display:none;">
                     <!-- Dynamic content will be inserted here -->
                 </div>
-
                 <hr style="border:none; border-top:1px solid #e0e0e0; margin:1.5rem 0;">
                 <h3 style="color:var(--primary-dark); margin-bottom:1rem; font-size:1.1rem;">Previous Meetings Material</h3>
                 <p style="text-align:center; color:var(--text-muted); font-style:italic; padding:2rem;">
@@ -342,19 +340,18 @@
         });
         // Types of Speakers
             function showSpeakerTypes() {
-            const content = document.getElementById('psContentArea');
-            content.style.display = 'block';
-            content.innerHTML = `
+            const contentArea = document.getElementById('psContentArea');
+            contentArea.style.display = 'block';
+            contentArea.innerHTML = `
                 <h4 style="color:var(--primary-dark); margin-bottom:1rem; text-align:center;">Types of Speakers</h4>
                 <div style="text-align:center;">
-                    <img src="types_of_speakers.png" alt="Types of Speakers" style="max-width:100%; height:auto; border-radius:10px; box-shadow:0 4px 6px rgba(0,0,0,0.1);">
+                    <img src="images/types-of-speakers/types-picture.jpg" alt="Types of Speakers" style="max-width:100%; height:auto; border-radius:10px; box-shadow:0 4px 6px rgba(0,0,0,0.1);">
                 </div>
                 <p style="text-align:center; margin-top:1rem; color:var(--text-muted); font-size:0.9rem;">
                     Identify your speaking style and learn to leverage your strengths!
                 </p>
             `;
-            // removed scrollIntoView so the top buttons remain visible / clickable
-            content.focus && content.focus();
+            contentArea.focus && contentArea.focus();
         }
     
         // Feedback Focus
