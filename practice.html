@@ -231,29 +231,47 @@
         <section class="stats-section">
             <h2>Growth in Action</h2>
             <div class="stats">
-                <div class="stat-item"><span class="stat-number">0*</span><span class="stat-label">Public Speaking Sessions Held</span></div>
-                <div class="stat-item"><span class="stat-number">0*</span><span class="stat-label">Individuals Reached</span></div>
+                <div class="stat-item"><span class="stat-number">1*</span><span class="stat-label">Public Speaking Sessions Held</span></div>
+                <div class="stat-item"><span class="stat-number">10*</span><span class="stat-label">Individuals Reached</span></div>
                 <div class="stat-item"><span class="stat-number">0*</span><span class="stat-label">Small Businesses Supported</span></div>
                 <div class="stat-item"><span class="stat-number">0*</span><span class="stat-label">New Members Enrolled</span></div>
             </div>
         </section>
-        <!-- END GOAL (Light Green) -->
-        <section class="end-goal-section">
-            <h2>End Goal</h2>
-            <p class="end-goal-text">
-                Reduce skills gap in digital tools, deliver engaging & efficient communication, and increase independence in the information age — so your program shows stronger reporting quality, better outcomes, and motivated teams.
-            </p>
-            <div class="info-boxes">
-                <div class="info-box">
-                    <h3>Delivery 90% online</h3>
-                    <p>• Weekdays 16:00–17:00<br>• Saturday mornings 09:00-10:00</p>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section class="testimonials-section">
+            <h2>What Our Clients Say</h2>
+            <p class="testimonials-intro">Real feedback from people we've worked with</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card" onclick="showTestimonialModal('written')" tabindex="0">
+                    <div class="testimonial-icon">💬</div>
+                    <h3>Written Testimonials</h3>
+                    <p>Read heartfelt words from our participants</p>
+                    <span class="view-more">Click to view →</span>
                 </div>
-                <div class="info-box">
-                    <h3>Proof & funding</h3>
-                    <p>We record sessions, attendance, capture notes & photos and submit reports for fund claims.</p>
+                <div class="testimonial-card" onclick="showTestimonialModal('screenshots')" tabindex="0">
+                    <div class="testimonial-icon">📸</div>
+                    <h3>Screenshots</h3>
+                    <p>See positive feedback captured in real-time</p>
+                    <span class="view-more">Click to view →</span>
+                </div>
+                <div class="testimonial-card" onclick="showTestimonialModal('changes')" tabindex="0">
+                    <div class="testimonial-icon">✨</div>
+                    <h3>Positive Changes</h3>
+                    <p>Discover the transformations we've witnessed</p>
+                    <span class="view-more">Click to view →</span>
                 </div>
             </div>
         </section>
+
+        <!-- TESTIMONIALS MODAL -->
+        <div class="modal" id="testimonialsModal" aria-modal="true" role="dialog">
+            <div class="modal-content">
+                <button class="close-modal" onclick="closeTestimonialsModal()" aria-label="Close">&times;</button>
+                <div id="testimonialsContent"></div>
+            </div>
+        </div>
+        
         <!-- DIRECTORS -->
         <section class="directors-section">
             <h2>Meet Our Directors</h2>
