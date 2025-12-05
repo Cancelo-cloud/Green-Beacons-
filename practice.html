@@ -175,6 +175,66 @@
             .hero h2 { font-size: 2rem; }
             footer { flex-direction: column; text-align: center; }
         }
+
+        .testimonials-btn {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 18px 48px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(255, 107, 53, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .testimonials-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(255, 107, 53, 0.4);
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.95) 100%);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--primary-light);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .testimonial-card:hover {
+            transform: translateX(4px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+        .testimonial-text {
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .testimonial-text::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 3rem;
+            color: var(--primary-light);
+            opacity: 0.3;
+        }
+        .testimonial-author {
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .testimonial-meta {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+    </style>
     </style>
 </head>
 <body>
@@ -265,9 +325,13 @@
                 <div class="stat-item"><span class="stat-number">0*</span><span class="stat-label">New Members Enrolled</span></div>
             </div>
             <!-- TESTIMONIALS BUTTON -->
-            <div style="text-align: center; margin-top: 2.5rem; padding-top: 2rem; border-top: 2px solid rgba(82, 183, 136, 0.2);">
+            <div style="text-align: center; margin-top: 2.5rem; padding: 2.5rem; background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.1) 100%); border-radius: 16px;">
+                <h3 style="color: var(--primary-dark); font-size: 1.5rem; margin-bottom: 1rem;">What Our Participants Say</h3>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Real feedback from people who've experienced our training firsthand
+                </p>
                 <button onclick="showTestimonialsModal()" class="testimonials-btn" type="button">
-                    Testimonials
+                    View Testimonials
                 </button>
             </div>
         </section>
@@ -529,7 +593,60 @@
                 `,
                 photo: "images/gina/gina-photo.jpg"
             }
-        
+
+        // ADD TESTIMONIALS DATA HERE:
+        const testimonials = [
+            {
+                text: "The public speaking session transformed how I present. I went from nervous to confident in just one training!",
+                name: "Sipho Ndlovu",
+                company: "DUCT Rivers",
+                location: "KwaZulu-Natal"
+            },
+            {
+                text: "Learning digital skills in a practical way made all the difference. Now I can create professional reports with ease.",
+                name: "Thandi Mkhize",
+                company: "Wild Trust",
+                location: "Durban"
+            },
+            {
+                text: "The personal finance module helped me understand budgeting for the first time. I'm now tracking my expenses and saving monthly.",
+                name: "Bongani Dlamini",
+                company: "Community Development Project",
+                location: "Pietermaritzburg"
+            }
+        ];
+
+        function showTestimonialsModal() {
+            let content = '<h2 style="text-align:center; color:var(--primary-dark); margin-bottom:2rem; font-size:2rem;">Testimonials</h2>';
+            
+            if (testimonials.length === 0) {
+                content += `
+                    <div style="text-align:center; padding:3rem; color:var(--text-muted);">
+                        <p style="font-size:1.1rem; margin-bottom:1rem;">📝 Coming Soon!</p>
+                        <p>We're collecting feedback from our first cohort. Check back soon to see what participants are saying about their transformation journey.</p>
+                    </div>
+                `;
+            } else {
+                testimonials.forEach(testimonial => {
+                    content += `
+                        <div class="testimonial-card">
+                            <div class="testimonial-text">${testimonial.text}</div>
+                            <div class="testimonial-author">${testimonial.name}</div>
+                            <div class="testimonial-meta">${testimonial.company}${testimonial.location ? ' • ' + testimonial.location : ''}</div>
+                        </div>
+                    `;
+                });
+            }
+            
+            document.getElementById('testimonialsContent').innerHTML = content;
+            document.getElementById('testimonialsModal').style.display = 'flex';
+        }
+
+        function closeTestimonialsModal() {
+            document.getElementById('testimonialsModal').style.display = 'none';
+        }
+        // END OF TESTIMONIALS FUNCTIONS
+            
         };
         function showBio(person) {
             const bio = bios[person];
