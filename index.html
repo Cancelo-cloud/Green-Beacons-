@@ -507,7 +507,7 @@
         function showBio(person) {
             const bio = bios[person];
             document.getElementById('bioContent').innerHTML = `
-                <img src="${bio.photo}" alt="${bio.name}" style="width:150px; height:150px; border-radius:50%; display:block; margin:0 auto 1.5rem; object-fit:cover;">
+                <img src="${bio.photo}" alt="${bio.name}" style="width:200px; height:200px; border-radius:50%; display:block; margin:0 auto 1.5rem; object-fit:cover; object-position:center 25%;">
                 <h2 style="text-align:center; color:var(--primary-dark); margin-bottom:0.5rem;">${bio.name}</h2>
                 <p style="text-align:center; color:var(--text-muted); margin-bottom:2rem; font-style:italic;">${bio.role}</p>
                 ${bio.experience}
