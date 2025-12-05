@@ -326,7 +326,7 @@
             </div>
             <!-- TESTIMONIALS BUTTON -->
             <div style="text-align: center; margin-top: 2.5rem; padding: 2.5rem; background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.1) 100%); border-radius: 16px;">
-                <h3 style="color: var(--primary-dark); font-size: 1.5rem; margin-bottom: 1rem;">What Our Participants Say</h3>
+                <h3 style="color: var(--primary-dark); font-size: 1.5rem; margin-bottom: 1rem;">What Our Clients Say</h3>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
                     Real feedback from people who've experienced our training firsthand
                 </p>
@@ -598,19 +598,19 @@
         const testimonials = [
             {
                 text: "The public speaking session transformed how I present. I went from nervous to confident in just one training!",
-                name: "Sipho Ndlovu",
+                name: "Name",
                 company: "DUCT Rivers",
                 location: "KwaZulu-Natal"
             },
             {
                 text: "Learning digital skills in a practical way made all the difference. Now I can create professional reports with ease.",
-                name: "Thandi Mkhize",
+                name: "Name",
                 company: "Wild Trust",
                 location: "Durban"
             },
             {
                 text: "The personal finance module helped me understand budgeting for the first time. I'm now tracking my expenses and saving monthly.",
-                name: "Bongani Dlamini",
+                name: "Name",
                 company: "Community Development Project",
                 location: "Pietermaritzburg"
             }
@@ -695,6 +695,9 @@
             });
             document.getElementById('psModal').addEventListener('click', function(e) {
                 if (e.target === this) closePSModal();
+            });
+            document.getElementById('testimonialsModal').addEventListener('click', function(e) {
+                if (e.target === this) closeTestimonialsModal();
             });
         });
         // Public Speaking Service modal logic
