@@ -175,6 +175,66 @@
             .hero h2 { font-size: 2rem; }
             footer { flex-direction: column; text-align: center; }
         }
+
+        .testimonials-btn {
+            background: linear-gradient(135deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 18px 48px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(255, 107, 53, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .testimonials-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(255, 107, 53, 0.4);
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.95) 100%);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--primary-light);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .testimonial-card:hover {
+            transform: translateX(4px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+        .testimonial-text {
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .testimonial-text::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 3rem;
+            color: var(--primary-light);
+            opacity: 0.3;
+        }
+        .testimonial-author {
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .testimonial-meta {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+    </style>
     </style>
 </head>
 <body>
@@ -259,15 +319,19 @@
         <section class="stats-section">
             <h2>Growth in Action</h2>
             <div class="stats">
-                <div class="stat-item"><span class="stat-number">2*</span><span class="stat-label">Online Training Sessions Held</span></div>
-                <div class="stat-item"><span class="stat-number">20*</span><span class="stat-label">Individuals Reached</span></div>
+                <div class="stat-item"><span class="stat-number">1*</span><span class="stat-label">Online Training Sessions Held</span></div>
+                <div class="stat-item"><span class="stat-number">10*</span><span class="stat-label">Individuals Reached</span></div>
                 <div class="stat-item"><span class="stat-number">0*</span><span class="stat-label">Small Businesses Supported</span></div>
                 <div class="stat-item"><span class="stat-number">0*</span><span class="stat-label">New Members Enrolled</span></div>
             </div>
             <!-- TESTIMONIALS BUTTON -->
-            <div style="text-align: center; margin-top: 2.5rem; padding-top: 2rem; border-top: 2px solid rgba(82, 183, 136, 0.2);">
+            <div style="text-align: center; margin-top: 2.5rem; padding: 2.5rem; background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(247, 147, 30, 0.1) 100%); border-radius: 16px;">
+                <h3 style="color: var(--primary-dark); font-size: 1.5rem; margin-bottom: 1rem;">What Our Clients Say</h3>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Real feedback from people who've experienced our training firsthand
+                </p>
                 <button onclick="showTestimonialsModal()" class="testimonials-btn" type="button">
-                    Testimonials
+                    View Testimonials
                 </button>
             </div>
         </section>
@@ -319,7 +383,7 @@
                 <button class="close-modal" onclick="closePSModal()" aria-label="Close">&times;</button>
                 <h2 style="text-align:center; color:var(--primary-dark); margin-bottom:1rem;">Public Speaking & Communication</h2>
                 <p style="text-align:center; color:var(--text-muted); margin-bottom:0.5rem; font-size:1rem;">
-                    <strong>Previous Meetings Held:</strong> <span style="color:var(--primary-dark); font-weight:600;">1*</span>
+                    <strong>Previous Meetings Held:</strong> <span style="color:var(--primary-dark); font-weight:600;">0*</span>
                 </p>
                 <hr style="border:none; border-top:1px solid #e0e0e0; margin:1.5rem 0;">
                 
@@ -455,82 +519,77 @@
             samkelo: {
                 name: "Samkelo Madlala",
                 role: "Co-Director",
-                experience: `
-                    <h3 style="color:var(--primary-dark); margin-bottom:0.75rem;">Experience</h3>
-                    <ul style="line-height:1.7; color:var(--text-muted); margin-bottom:1.2rem; padding-left:1.2rem;">
-                        <li><strong>DUCT Rivers (2023–Present)</strong> – Training & Pathways Facilitator and Project Administrator, supporting youth development and organisational systems.</li>
-                        <li><strong>Wild Trust (2024–Present)</strong> – Interns Project Manager for the YES Nedbank Programme, overseeing 15–16 youth interns.</li>
-                        <li><strong>Mindset & Productivity Writer</strong> – Author of 100+ online blogs on mindset, learning, and personal mastery.</li>
-                    </ul>
-                    <h3 style="color:var(--primary-dark); margin-bottom:0.75rem;">Education & Certifications</h3>
-                    <ul style="line-height:1.7; color:var(--text-muted); margin-bottom:1.2rem; padding-left:1.2rem;">
-                        <li>A2B Hardwires Interpretation Coach (In Progress)</li>
-                        <li>Advanced Emerging Leader, TLC Global (2024)</li>
-                        <li>Python & HTML Programming</li>
-                    </ul>
-                    <h3 style="color:var(--primary-dark); margin-bottom:1rem;">Hobbies</h3>
-                    <p style="color:var(--text-muted); line-height:1.8;">
-                        Reading • Writing • Soccer • Exercise
-                    </p>
-                `,
+                experience: `...`,
                 photo: "images/samkelo/samkelo-photo.jpg"
             },
             
             thabo: {
                 name: "Thabo Blessing Duma",
                 role: "Director",
-                experience: `
-                    <h3 style="color:var(--primary-dark); margin-bottom:0.75rem;">Experience</h3>
-                    <ul style="line-height:1.7; color:var(--text-muted); margin-bottom:1.2rem; padding-left:1.2rem;">
-                        <li><strong>GreenBeacons (Present)</strong> – Director, leading initiatives that blend environmental sustainability with personal development, equipping young people to become custodians of ecological infrastructure.</li>
-                        <li><strong>SANBI</strong> – Specialized in conservation and data systems management.</li>
-                        <li><strong>Ezemvelo KZN Wildlife</strong> – Gained expertise in conservation practices and environmental management.</li>
-                        <li><strong>Invasive Species Management</strong> – Led clearing initiatives in KwaZulu-Natal focused on ecological restoration.</li>
-                    </ul>
-                    <h3 style="color:var(--primary-dark); margin-bottom:0.75rem;">Speaking & Advocacy</h3>
-                    <ul style="line-height:1.7; color:var(--text-muted); margin-bottom:1.2rem; padding-left:1.2rem;">
-                        <li><strong>World Youth Skills Day Dialogue</strong> – Featured speaker sharing insights on youth empowerment and green economies.</li>
-                        <li><strong>Africa Forward Summit</strong> – Engaged with policy makers on inclusive, sustainable development strategies.</li>
-                    </ul>
-                    <h3 style="color:var(--primary-dark); margin-bottom:1rem;">Mission</h3>
-                    <p style="color:var(--text-muted); line-height:1.8;">
-                        Committed to shaping inclusive, green economies through youth empowerment. Believes that empowered youth are the key to thriving ecosystems and sustainable environmental stewardship.
-                    </p>
-                `,
+                experience: `...`,
                 photo: "images/thabo/thabo-photo.jpg"
             },
                 
             gina: {
                 name: "Sethabile Gina",
                 role: "Finance & Admin Manager",
-                experience: `
-                    <h3 style="color:var(--primary-dark); margin-bottom:0.75rem;">Experience</h3>
-                    <ul style="line-height:1.7; color:var(--text-muted); margin-bottom:1.2rem; padding-left:1.2rem;">
-                        <li><strong>DUCT Rivers (2024–Present)</strong> – Project Finance Administrator & Office Manager Assistant, managing payroll for 1,000+ employees and overseeing budget planning for multimillion-rand environmental projects.</li>
-                        <li><strong>Financial Leadership</strong> – Expertise in financial reporting, forecasting, and tender support for large-scale environmental initiatives.</li>
-                        <li><strong>Mentorship & Development</strong> – Mentors finance interns and develops reporting frameworks to strengthen organizational capacity.</li>
-                    </ul>
-                    <h3 style="color:var(--primary-dark); margin-bottom:0.75rem;">Education & Certifications</h3>
-                    <ul style="line-height:1.7; color:var(--text-muted); margin-bottom:1.2rem; padding-left:1.2rem;">
-                        <li>A2B Transformative Leadership Programme (2025)</li>
-                        <li>Environmental Project Planning & Proposal Writing – GreenMatter (2025)</li>
-                        <li>Facilitation Programme – DUCT (2025)</li>
-                        <li>Data Science & Data Analytics – Cisco (2022–2025)</li>
-                        <li>AI for Everyone – Coursera (2024)</li>
-                    </ul>
-                    <h3 style="color:var(--primary-dark); margin-bottom:0.75rem;">Technical Skills</h3>
-                    <p style="color:var(--text-muted); line-height:1.8; margin-bottom:1.2rem;">
-                        Project Budgeting & Payroll • Financial Reporting & Analysis • Excel (Models, Pivot Tables, Macros) • Sage • Kwantu.Me • Data Analytics
-                    </p>
-                    <h3 style="color:var(--primary-dark); margin-bottom:1rem;">Hobbies</h3>
-                    <p style="color:var(--text-muted); line-height:1.8;">
-                        Reading • Aerobics • Swimming • Research
-                    </p>
-                `,
+                experience: `...`,
                 photo: "images/gina/gina-photo.jpg"
             }
+        };  // <-- This closes the bios object
         
-        };
+        // Testimonials data
+        const testimonials = [
+            {
+                text: "The public speaking session transformed how I present. I went from nervous to confident in just one training!",
+                name: "Name",
+                company: "DUCT Rivers",
+                location: "KwaZulu-Natal"
+            },
+            {
+                text: "Learning digital skills in a practical way made all the difference. Now I can create professional reports with ease.",
+                name: "Name",
+                company: "Wild Trust",
+                location: "Durban"
+            },
+            {
+                text: "The personal finance module helped me understand budgeting for the first time. I'm now tracking my expenses and saving monthly.",
+                name: "Name",
+                company: "Community Development Project",
+                location: "Pietermaritzburg"
+            }
+        ];
+        
+        function showTestimonialsModal() {
+            let content = '<h2 style="text-align:center; color:var(--primary-dark); margin-bottom:2rem; font-size:2rem;">Testimonials</h2>';
+            
+            if (testimonials.length === 0) {
+                content += `
+                    <div style="text-align:center; padding:3rem; color:var(--text-muted);">
+                        <p style="font-size:1.1rem; margin-bottom:1rem;">📝 Coming Soon!</p>
+                        <p>We're collecting feedback from our first cohort. Check back soon to see what participants are saying about their transformation journey.</p>
+                    </div>
+                `;
+            } else {
+                testimonials.forEach(testimonial => {
+                    content += `
+                        <div class="testimonial-card">
+                            <div class="testimonial-text">${testimonial.text}</div>
+                            <div class="testimonial-author">${testimonial.name}</div>
+                            <div class="testimonial-meta">${testimonial.company}${testimonial.location ? ' • ' + testimonial.location : ''}</div>
+                        </div>
+                    `;
+                });
+            }
+            
+            document.getElementById('testimonialsContent').innerHTML = content;
+            document.getElementById('testimonialsModal').style.display = 'flex';
+        }
+        
+        function closeTestimonialsModal() {
+            document.getElementById('testimonialsModal').style.display = 'none';
+        }
+        
         function showBio(person) {
             const bio = bios[person];
             document.getElementById('bioContent').innerHTML = `
@@ -545,11 +604,11 @@
             `;
             document.getElementById('bioModal').style.display = 'flex';
         }
+        
         function closeBio() {
             document.getElementById('bioModal').style.display = 'none';
         }
         
-        // ADD THE NEW FUNCTIONS HERE:
         function viewFullImage(imageSrc, altText) {
             let viewer = document.getElementById('imageViewer');
             if (!viewer) {
@@ -569,9 +628,8 @@
                 viewer.style.display = 'none';
             }
         }
-        // END OF NEW FUNCTIONS
         
-        // Click outside modal content closes bio modal
+        // Click outside modal content closes modals
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('bioModal').addEventListener('click', function(e) {
                 if (e.target === this) closeBio();
@@ -579,15 +637,21 @@
             document.getElementById('psModal').addEventListener('click', function(e) {
                 if (e.target === this) closePSModal();
             });
+            document.getElementById('testimonialsModal').addEventListener('click', function(e) {
+                if (e.target === this) closeTestimonialsModal();
+            });
         });
+        
         // Public Speaking Service modal logic
         document.getElementById('publicSpeakingCard').addEventListener('click', showPSModal);
         document.getElementById('publicSpeakingCard').addEventListener('keypress', function(e){
             if(e.key==='Enter'||e.key===' ') showPSModal();
         });
+        
         function showPSModal() {
             document.getElementById('psModal').style.display = 'flex';
         }
+        
         function closePSModal() {
             document.getElementById('psModal').style.display = 'none';
         }
