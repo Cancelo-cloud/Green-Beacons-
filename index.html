@@ -29,11 +29,13 @@ body{
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
-  padding:1.2rem 2.5rem;
+  padding:0.75rem 2.5rem;
   background:rgba(245,242,235,0.92);
   backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(26,107,58,0.12);
 }
+.nav-brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;}
+.nav-brand img{width:48px;height:48px;object-fit:contain;border-radius:4px;}
 .nav-logo{
   font-family:'DM Serif Display',serif;
   font-size:1.35rem;color:var(--green);
@@ -480,7 +482,10 @@ footer{
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Green<span>Beacons</span></div>
+  <a class="nav-brand" href="#">
+    <img src="GB_Logo_.jpeg" alt="Green Beacons Logo"/>
+    <div class="nav-logo">Green<span>Beacons</span></div>
+  </a>
   <div class="nav-links">
     <a href="#what-we-do">What We Do</a>
     <a href="#pillars">Our System</a>
@@ -602,6 +607,7 @@ footer{
     <div class="proof-grid">
       <div class="proof-text">
         <p>Green Beacons is not a concept. It is a live system currently managing over 1,000 participants across 12 partner organisations under the Social Employment Fund — piloted within DUCT (Social Employment Fund), KwaZulu-Natal.</p>
+        <p>The system is currently in discussion with the Industrial Development Corporation (IDC) for broader deployment, and in active conversation with Wild Trust for their YES Nedbank intern programme.</p>
       </div>
       <div class="proof-items">
         <div class="proof-item"><span class="proof-check">✓</span><div class="proof-item-text"><strong>1,000+ participants</strong> tracked across 12 organisations</div></div>
