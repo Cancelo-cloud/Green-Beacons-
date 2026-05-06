@@ -205,6 +205,24 @@ nav{
   border:1px solid rgba(26,107,58,.2);border-radius:2px;
 }
 
+.pillar-dark{background:#0d1f0f;color:var(--white);}
+.pillar-dark h3,.pillar-dark .pillar-num{color:var(--white);}
+.pillar-dark p{color:rgba(255,255,255,.72);}
+.pillar-dark .pillar-tag{color:var(--green-light);border-color:rgba(82,183,136,.4);}
+.pillar-dark::before{background:linear-gradient(90deg,var(--green-light),rgba(82,183,136,.4));}
+
+.pillar-forest{background:#1a4a27;color:var(--white);}
+.pillar-forest h3,.pillar-forest .pillar-num{color:var(--white);}
+.pillar-forest p{color:rgba(255,255,255,.72);}
+.pillar-forest .pillar-tag{color:#a8e6c0;border-color:rgba(168,230,192,.4);}
+.pillar-forest::before{background:linear-gradient(90deg,#a8e6c0,rgba(168,230,192,.4));}
+
+.pillar-lime{background:#52b788;color:var(--white);}
+.pillar-lime h3,.pillar-lime .pillar-num{color:var(--white);}
+.pillar-lime p{color:rgba(255,255,255,.85);}
+.pillar-lime .pillar-tag{color:var(--ink);border-color:rgba(13,31,15,.2);background:rgba(255,255,255,.15);}
+.pillar-lime::before{background:linear-gradient(90deg,rgba(255,255,255,.5),rgba(255,255,255,.1));}
+
 /* PROOF */
 .proof{
   background:linear-gradient(135deg,var(--ink) 0%,#0d2e14 100%);
@@ -285,6 +303,32 @@ nav{
 }
 .addon{font-size:.9rem;color:var(--muted);}
 .addon strong{color:var(--ink);display:block;margin-bottom:.2rem;font-weight:600;}
+
+.advantage-label{
+  font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--green);margin-bottom:1rem;
+}
+.advantage-table{border:1px solid rgba(26,107,58,.1);border-radius:2px;overflow:hidden;}
+.adv-row{
+  display:grid;grid-template-columns:1fr 1.4fr;
+  border-bottom:1px solid rgba(26,107,58,.08);
+}
+.adv-row:last-child{border-bottom:none;}
+.adv-row.header{background:rgba(26,107,58,.04);}
+.adv-row.header .adv-col{
+  font-size:.7rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);padding:.75rem 1.25rem;
+}
+.adv-col{
+  padding:1rem 1.25rem;font-size:.9rem;color:var(--muted);
+  display:flex;align-items:center;gap:.5rem;line-height:1.5;
+}
+.adv-row:not(.header) .adv-col:first-child{
+  font-weight:600;color:var(--ink);
+  border-right:1px solid rgba(26,107,58,.08);
+}
+.adv-icon{font-size:1rem;}
+.adv-row:not(.header):hover{background:rgba(26,107,58,.03);}
 
 /* OVERSEER */
 .overseer{background:var(--paper);}
@@ -490,22 +534,31 @@ footer{
         </div>
       </div>
       <div>
-        <div class="not-list">
-          <div class="not-item">
-            <div class="not-icon">≠</div>
-            <div class="not-text"><strong>Not a tool</strong><span>We deliver visibility and performance tracking. The tool is just the delivery layer.</span></div>
+        <div class="advantage-label">Green Beacons Advantage</div>
+        <div class="advantage-table">
+          <div class="adv-row header">
+            <div class="adv-col">Pillar</div>
+            <div class="adv-col">What it means</div>
           </div>
-          <div class="not-item">
-            <div class="not-icon">≠</div>
-            <div class="not-text"><strong>Not Google Drive</strong><span>Storage isn't the problem. Action is.</span></div>
+          <div class="adv-row">
+            <div class="adv-col"><span class="adv-icon">📊</span> Real-time visibility</div>
+            <div class="adv-col">PMs see every participant in 3 clicks</div>
           </div>
-          <div class="not-item">
-            <div class="not-icon">≠</div>
-            <div class="not-text"><strong>Not a chatbot layer</strong><span>Our AI acts on live data — generating reports, flagging risk, and guiding intervention.</span></div>
+          <div class="adv-row">
+            <div class="adv-col"><span class="adv-icon">👁️</span> Behaviour tracking</div>
+            <div class="adv-col">Who is active vs inactive — daily</div>
           </div>
-          <div class="not-item">
-            <div class="not-icon">✓</div>
-            <div class="not-text"><strong>Coordination infrastructure</strong><span>Platform + trained workforce layer. We build it, we staff it, and we make it run.</span></div>
+          <div class="adv-row">
+            <div class="adv-col"><span class="adv-icon">⚡</span> Active intervention</div>
+            <div class="adv-col">Overseers act before problems become statistics</div>
+          </div>
+          <div class="adv-row">
+            <div class="adv-col"><span class="adv-icon">🤖</span> Agentic AI</div>
+            <div class="adv-col">Reports, recommendations, status updates — automated</div>
+          </div>
+          <div class="adv-row">
+            <div class="adv-col"><span class="adv-icon">📱</span> Participant-facing</div>
+            <div class="adv-col">Participants use the system — building digital skills as a by-product</div>
           </div>
         </div>
       </div>
@@ -519,22 +572,22 @@ footer{
     <div class="section-label">The System</div>
     <div class="section-title">Three pillars.<br>One living system.</div>
     <div class="pillars-grid">
-      <div class="pillar">
+      <div class="pillar pillar-dark">
         <div class="pillar-num">01</div>
         <h3>Tracking</h3>
         <p>Every participant has their own page, updated in real time. Programme managers can move from high-level org view to individual activity in three clicks — without waiting for a monthly report.</p>
         <div class="pillar-tag">3-click visibility</div>
       </div>
-      <div class="pillar">
+      <div class="pillar pillar-forest">
         <div class="pillar-num">02</div>
         <h3>Intelligence</h3>
         <p>Claude AI reads the live system and generates structured performance reports, flags inactive participants, and delivers personalised recommendations per person — based on exactly where they are in their journey.</p>
         <div class="pillar-tag">Agentic AI</div>
       </div>
-      <div class="pillar">
+      <div class="pillar pillar-lime">
         <div class="pillar-num">03</div>
         <h3>Visibility</h3>
-        <p>Participants access their own pages via a shared link on their phones, at no cost. They update their own progress and can see what others in their organisation are doing, creating natural accountability. Coordinators and managers work in the same system</p>
+        <p>Participants access their own pages via a shared link on their phones, at no cost. They update their own progress and can see what others in their organisation are doing, creating natural accountability. Coordinators and managers work in the same system.</p>
         <div class="pillar-tag">Behaviour-driven</div>
       </div>
     </div>
@@ -548,7 +601,8 @@ footer{
     <div class="section-title">Already running.<br>Already working.</div>
     <div class="proof-grid">
       <div class="proof-text">
-        <p>Green Beacon Consulting is no longer a concept. It is a live system currently managing over 1,000 participants across 12 partner organisations under the Social Employment Fund — piloted within DUCT (Social Employment Fund), KwaZulu-Natal.</p>
+        <p>Green Beacons is not a concept. It is a live system currently managing over 1,000 participants across 12 partner organisations under the Social Employment Fund — piloted within DUCT (Social Employment Fund), KwaZulu-Natal.</p>
+        <p>The system is currently in discussion with the Industrial Development Corporation (IDC) for broader deployment, and in active conversation with Wild Trust for their YES Nedbank intern programme.</p>
       </div>
       <div class="proof-items">
         <div class="proof-item"><span class="proof-check">✓</span><div class="proof-item-text"><strong>1,000+ participants</strong> tracked across 12 organisations</div></div>
