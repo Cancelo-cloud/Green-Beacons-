@@ -967,3 +967,44 @@ footer {
 .fade-up.d5 {
   animation-delay: 0.5s;
 }
+
+/* Consulting refresh: preserve the existing hero and Three Pillars. */
+.what-we-do { background: #dceee0; }
+.what-we-do .what-text > p { color: #355d43; }
+.capability-strip { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1rem; margin:2rem 0 0; padding:1.5rem 0; border-top:1px solid #aacbb4; border-bottom:1px solid #aacbb4; }
+.capability-strip strong { display:block; font-size:.95rem; line-height:1.5; color:#153b23; }
+.capability-strip span { display:block; margin-top:.4rem; font-size:.875rem; line-height:1.6; color:#355d43; }
+.what-we-do .distinction { background:#103820; border-left-color:#52b788; }
+.what-we-do .distinction p { color:#e4f3e7; margin-bottom:0; }
+.what-we-do .advantage-table { overflow:hidden; border-color:#a3c7ae; }
+.what-we-do .adv-row.header { background:#c4e2cc; color:#153b23; }
+.what-we-do .adv-row:not(.header):nth-child(3n+2) { background:#123d24; }
+.what-we-do .adv-row:not(.header):nth-child(3n+2) .adv-col { color:#eaf6ed; }
+.what-we-do .adv-row:not(.header):nth-child(3n) { background:#28633d; }
+.what-we-do .adv-row:not(.header):nth-child(3n) .adv-col { color:#eff8f1; }
+.what-we-do .adv-row:not(.header):nth-child(3n+1) { background:#c4e2cc; }
+.what-we-do .adv-row:not(.header):nth-child(3n+1) .adv-col { color:#153b23; }
+#consulting { background:#c4e2cc; }
+#consulting .pricing-note { color:#355d43; }
+#consulting .price-card { background:#deeee1; border-color:#94b79f; }
+#consulting .price-card:nth-child(2) { background:#28633d; border-color:#28633d; }
+#consulting .price-card:nth-child(3) { background:#103820; border-color:#103820; }
+#consulting .price-card:first-child :is(.price-tier,.price-label,.price-range,.price-retainer) { color:#355d43; }
+#consulting .price-card:not(:first-child) :is(.price-tier,.price-amount,.price-label,.price-range,.price-retainer) { color:#edf7ef; }
+#consulting .price-card:not(:first-child) .price-range { border-color:#77a789; }
+#consulting .price-range,#consulting .price-retainer { font-size:.95rem; line-height:1.65; }
+.modal-box { background:#deeee1; }
+.modal-sub,.modal-email { color:#355d43; }
+.contact-email { color:#c1dcc9; line-height:1.7; }
+footer .footer-logo,footer .footer-copy { color:#a8c6b1; }
+a:focus-visible,button:focus-visible { outline:3px solid #c8a84b; outline-offset:5px; }
+@media(max-width:900px) { .capability-strip { grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem; } }
+@media(max-width:480px) { .section { padding:4rem 1.25rem; } .what-grid { gap:2.5rem; } .price-card { padding:2rem; } .modal { padding:1rem; } .modal-box { padding:2rem 1.25rem; } .adv-row { grid-template-columns:1fr; gap:.5rem; } .capability-strip { grid-template-columns:1fr; gap:1rem; } nav { padding:.75rem 1rem; } .nav-logo { font-size:1.05rem; } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation:none!important; transition:none!important; } .fade-up { opacity:1!important; } }
+
+/* Founder portrait occupies the reserved space; original hero colours retained. */
+.hero-content { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr); gap:4rem; align-items:center; }
+.hero-copy { min-width:0; }
+.hero-portrait { margin:0; width:100%; max-width:420px; justify-self:end; }
+.hero-portrait img { display:block; width:100%; height:auto; border-radius:2px; border:1px solid rgba(82,183,136,.3); }
+@media(max-width:900px) { .hero-content { grid-template-columns:1fr; gap:3rem; } .hero-portrait { max-width:380px; justify-self:start; } }
