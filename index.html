@@ -29,38 +29,20 @@
 <div class="hero-bg"></div>
 <div class="hero-grid"></div>
 <div class="hero-glow"></div>
-<div class="hero-content">
+<div class="hero-content"><div class="hero-copy">
 <div class="hero-eyebrow fade-up d1">Green Beacons Consulting</div>
 <h1 class="fade-up d2">
           Infrastructure for <em>Human Development</em> at Scale
         </h1>
 <p class="hero-sub fade-up d3">We build and manage connected workspaces for teams, development programmes and growing businesses—bringing work tracking, reporting and AI-assisted feedback together to make progress visible and guide action.</p>
 <a class="hero-cta fade-up d4" href="#contact">Request a Pilot <span class="hero-cta-arrow">→</span></a>
-<div class="hero-stats fade-up d5">
-<div class="stat">
-<div class="stat-num">3</div>
-<div class="stat-label">Connected Pillars</div>
-</div>
-<div class="stat">
-<div class="stat-num">2</div>
-<div class="stat-label">Perspectives: Managers &amp; Participants</div>
-</div>
-<div class="stat">
-<div class="stat-num">1</div>
-<div class="stat-label">Shared Working Environment</div>
-</div>
-<div class="stat">
-<div class="stat-num">AI</div>
-<div class="stat-label">Built Into the Workflow</div>
-</div>
-</div>
-</div>
+</div><figure class="hero-portrait fade-up d3"><img alt="Samkelo Madlala, founder of Green Beacons Consulting" decoding="async" fetchpriority="high" height="997" src="images/samkelo-madlala.webp" width="697"/></figure></div>
 </section>
 <!-- WHAT WE DO -->
 <section class="section what-we-do" id="what-we-do">
 <div class="section-inner">
 <div class="section-label">What We Do</div>
-<div class="section-title">Connected work.<br/>Informed action.</div>
+<div class="section-title">Connected work.<br/>Informed action.</div><div aria-label="Our connected approach" class="capability-strip"><div><strong>3 connected pillars</strong><span>Tracking · Intelligence · Visibility</span></div><div><strong>2 connected perspectives</strong><span>Management and participants</span></div><div><strong>1 shared workspace</strong><span>People, work and evidence together</span></div><div><strong>AI in the workflow</strong><span>Agreed tasks, with human review</span></div></div>
 <div class="what-grid">
 <div class="what-text">
 <p>Green Beacons Consulting brings people, work and evidence into one coordinated environment. We work with internal teams, internships, development programmes and SMEs to strengthen reporting, collaboration and human development.</p>
@@ -161,7 +143,7 @@
 </div>
 </div>
 ​
-<p class="pricing-note"><a href="mailto:s.madlala.pm@gmail.com?subject=Green%20Beacons%20Business%20Enquiry">Email for business enquiries →</a></p></div>
+</div>
 </section>
 <!-- CONTACT -->
 <section class="section contact" id="contact">
@@ -176,9 +158,8 @@
 <button class="contact-btn primary" onclick="openModal()">
             Request a Pilot →
           </button>
-<a class="contact-btn secondary" href="mailto:s.madlala.pm@gmail.com">Send an Email</a>
 </div>
-<div class="contact-email">Samkelo Madlala · Founder<br/>Business enquiries: <a href="mailto:s.madlala.pm@gmail.com">s.madlala.pm@gmail.com</a></div>
+<div class="contact-email">Samkelo Madlala · Founder<br/>For pilot proposals and business enquiries, use Request a Pilot above.</div>
 </div>
 </section>
 <!-- FOOTER -->
@@ -189,14 +170,14 @@
       </div>
 </footer>
 <!-- MODAL -->
-<div class="modal" id="contactModal">
+<div aria-hidden="true" aria-labelledby="contact-title" aria-modal="true" class="modal" id="contactModal" role="dialog">
 <div class="modal-box">
-<button class="modal-close" onclick="closeModal()">×</button>
-<div class="modal-title">Request a Pilot</div>
-<div class="modal-sub">Choose how you'd like to reach us.</div>
+<button aria-label="Close contact options" class="modal-close" onclick="closeModal()">×</button>
+<div class="modal-title" id="contact-title">Request a Pilot</div>
+<div class="modal-sub">Pilot proposals and business enquiries—choose how you would like to get in touch.</div>
 <div class="modal-options">
-<a class="modal-btn green" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=s.madlala.pm@gmail.com&amp;su=Green%20Beacons%20Business%20Enquiry" target="_blank">Open in Gmail</a>
-<a class="modal-btn outline" href="https://outlook.live.com/mail/0/deeplink/compose?to=s.madlala.pm@gmail.com&amp;subject=Green%20Beacons%20Business%20Enquiry" target="_blank">Open in Outlook</a>
+<a class="modal-btn green" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=s.madlala.pm@gmail.com&amp;su=Green%20Beacons%20Business%20Enquiry" rel="noopener noreferrer" target="_blank">Open in Gmail</a>
+<a class="modal-btn outline" href="https://outlook.live.com/mail/0/deeplink/compose?to=s.madlala.pm@gmail.com&amp;subject=Green%20Beacons%20Business%20Enquiry" rel="noopener noreferrer" target="_blank">Open in Outlook</a>
 <button class="modal-btn outline" onclick="copyEmail()">
             Copy Email Address
           </button>
