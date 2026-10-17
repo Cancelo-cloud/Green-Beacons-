@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -1017,4 +1018,31 @@ a:focus-visible,button:focus-visible { outline:3px solid #c8a84b; outline-offset
 }
 .hero-portrait img {
   clip-path: circle(49% at 50% 50%);
+}
+
+/* Final spacing refinements: the portrait stays inside the hero section. */
+@media (min-width:901px) {
+  .hero-portrait {
+    --portrait-extra: clamp(0px, calc((100vw - 1160px) / 2), 120px);
+    width: calc(100% + var(--portrait-extra));
+    max-width: 560px;
+    justify-self: start;
+  }
+}
+@media (max-width:600px) {
+  .what-we-do .what-grid { margin-top:2rem; }
+  .what-we-do .adv-row.header { display:none; }
+  .what-we-do .adv-row:not(.header) {
+    grid-template-columns:1fr;
+    gap:0;
+    padding:1.1rem 1.25rem;
+  }
+  .what-we-do .adv-row:not(.header) .adv-col {
+    padding:0;
+    border:0;
+    align-items:flex-start;
+    font-size:.95rem;
+    line-height:1.6;
+  }
+  .what-we-do .adv-row:not(.header) .adv-col:first-child { margin-bottom:.45rem; }
 }
