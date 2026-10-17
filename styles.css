@@ -1015,3 +1015,6 @@ a:focus-visible,button:focus-visible { outline:3px solid #c8a84b; outline-offset
   box-shadow: none;
   background: transparent;
 }
+.hero-portrait img {
+  clip-path: circle(49% at 50% 50%);
+}
